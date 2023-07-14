@@ -60,6 +60,9 @@
 /* ===============================
         Responsive Footer
 =============================== */
+
+/* 900 */
+
 @media(max-width: 900px){
     .footer-text{
         padding-left: 36px;

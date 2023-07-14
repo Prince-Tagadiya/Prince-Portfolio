@@ -1,3 +1,6 @@
+// ===============================
+//         Responsive Header
+// ===============================
 const mobile_nav = document.querySelector(".mobile-navbar-btn");
 const nav_header = document.querySelector(".header");
 
@@ -8,7 +11,9 @@ const toggleNavbar = () => {
 mobile_nav.addEventListener("click", () => toggleNavbar());
 
 
-
+// ===============================
+//           Scrollspy
+// ===============================
 let section = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('.sticky header nav ul li a');
 
