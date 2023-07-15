@@ -1,15 +1,25 @@
 // ===============================
 //         Responsive Header
 // ===============================
+
 const mobile_nav = document.querySelector(".mobile-navbar-btn");
 const nav_header = document.querySelector(".header");
+const navbarLinks = document.querySelectorAll(".navbar-link");
 
 const toggleNavbar = () => {
-    nav_header.classList.toggle("active");
-}
+  nav_header.classList.toggle("active");
+};
 
-mobile_nav.addEventListener("click", () => toggleNavbar());
+const closeNavbar = () => {
+  nav_header.classList.remove("active");
+};
 
+mobile_nav.addEventListener("click", toggleNavbar);
+
+// Close the navbar when a link is clicked
+navbarLinks.forEach((link) => {
+  link.addEventListener("click", closeNavbar);
+});
 
 // ===============================
 //           Scrollspy

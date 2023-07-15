@@ -56,38 +56,112 @@
         display: none;
     }
 }
+/* ===============================
+        Hero Section
+=============================== */
 
+@media (max-width: 962px){
+    .section-hero {
+        height: auto;
+        padding: 110px 0;
+    }
+    .content {
+        flex-direction: column;
+        gap: 30px;
+        height: auto;
+        text-align: center;
+    }
+    .hero-main {
+        flex-direction: column-reverse;
+        gap: 30px;
+        height: auto;
+        text-align: center;
+    }
+    .hero-text img {
+        right: 30px;
+    }
+    .hero-text p {
+        margin-bottom: 50px;
+    }
+    .hero-text span {
+        gap: 1.6rem;
+        justify-content: center;
+        margin-bottom: 40px;
+        margin-top: -20px;
+    }
+    .skills {
+        flex-direction: column;
+        position: static;
+    }
+    .skills p {
+        border-bottom: 2px solid rgba(45,46,50,.5);
+        border-right: none;
+        margin-bottom: 3rem;
+        margin-right: 0;
+        padding-bottom: 1rem;
+        padding-right: 0;
+    }
+    .skills ul {
+        justify-content: center;
+    }
+    .skills ul li {
+        align-items: center;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0,0,0,.09);
+        cursor: pointer;
+        display: flex;
+        height: 65px;
+        justify-content: center;
+        width: 65px;
+    }
+}
+@media (max-width: 500px){
+    .hero-img{
+        height: 280px;
+        width: 280px;
+    }
+    .hero-text h1 {
+        font-size: 40px;
+    }
+    .hero-text img {
+        height: 45px;
+        right: 4rem;
+        top: 6.4rem;
+        width: 45px
+    }
+}
 /* ===============================
         Responsive Footer
 =============================== */
 
-/* 900 */
 
-@media(max-width: 900px){
-    .footer-text{
-        padding-left: 36px;
-        padding-right: 36px;
-    }
 
-    .social_list{
-        padding-right: 36px;
+@media (max-width: 900px) {
+    .footer-text {
+      padding: 0 36px;
     }
-}
-/* 500px */
+    .social_list {
+      padding-right: 36px;
+    }
+  }
+  
+  @media (max-width: 650px) {
+    .footer_container {
+      flex-direction: column;
+      height: 115px;
+      text-align: center;
+    }
+    .footer-text {
+      position: static;
+      margin-top: 10px;
+    }
+    .social_list {
+      margin: 0;
+      width: 100%;
+      justify-content: center;
+      padding: 0;
+    }
+  }
 
-@media(max-width: 650px){
-    .footer_container{
-        flex-direction: column;
-        height: 115px;
-        text-align: center;
-        align-items: center;
-    }
-    .footer-text{
-        position: static;
-    }
-    .social_list{
-        margin-left: auto;
-        margin-right: auto;
-        width: 56%;
-    }
-}
+  
