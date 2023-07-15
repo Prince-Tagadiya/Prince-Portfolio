@@ -1,6 +1,6 @@
 # Personal Portfolio Website 💻
 
-Welcome to my personal portfolio website repository! 🚀 This GitHub repository houses the code and assets for my personal website, where I showcase my skills, projects, and achievements as a web developer.
+Welcome to my personal portfolio website repository! You can visit the live website [here](https://prince-tagadiya.github.io/Prince-Portfolio/). 🚀 This GitHub repository houses the code and assets for my personal website, where I showcase my skills, projects, and achievements as a web developer.
 
 ## Overview 🌟
 As a passionate web developer, I believe that having a well-designed and functional online presence is crucial. ✨ This portfolio website serves as a digital showcase of my work and provides visitors with an in-depth understanding of my abilities, experience, and expertise in web development.
