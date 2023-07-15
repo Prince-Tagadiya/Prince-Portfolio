@@ -19,7 +19,7 @@ To build this website, I utilized the following technologies and tools:
 - Bootstrap framework for responsive and mobile-first design
 
 ## Deployment 🚀
-The website is deployed using [Insert deployment method or service]. The repository contains the necessary configuration files and instructions for deploying the website, ensuring a seamless and efficient deployment process.
+The website is deployed using Visual Studio Code. The repository contains the necessary configuration files and instructions for deploying the website, ensuring a seamless and efficient deployment process.
 
 ## Contributions 🤝
 While this repository primarily represents my personal portfolio website, I welcome contributions, suggestions, and feedback from the open-source community. If you come across any bugs 🐛 or have ideas for improvements, feel free to open an issue or submit a pull request.
