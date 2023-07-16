@@ -4,7 +4,8 @@
 
 :root{
     --font-color: #2D2E32; 
-    --primery-color: ;
+    --primery-color: #eee;
+    --secondary-color: #ffffff;
 }
 *{
     margin: 0;
@@ -25,8 +26,12 @@ body{
     font-family: 'Mulish', sans-serif;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-    
+  
 }
+
+/* ===============================
+            Intro
+=============================== */
 .splash{
   position: fixed;
   top: 0;
@@ -38,8 +43,8 @@ body{
   color: white;
   text-align: center;
   display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .splash.display-none{
@@ -76,7 +81,7 @@ body{
     padding: 0 100px ;
     height: 8.6vh;
     width: 100%;
-    background-color: #FFF;
+    background-color: var(--secondary-color);
     box-shadow: -1px 8px 17px 2px rgba(0, 0, 0, 0.04);
     display: flex;
     justify-content: space-between;
@@ -134,32 +139,31 @@ body{
     padding: 16px;
   } */
   
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 99999;
-  }
-  
-  .sticky + .content {
-    padding-top: 102px;
-  }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+}
 
+.sticky + .content {
+  padding-top: 102px;
+}
 
 /* ===============================
-            Hero
+            Section
 =============================== */
 
 .section-hero,
 .section-service{
     padding: 96px 0;
-    background-color: #e8e8e8;
+    background-color: var(--primery-color);
     height: 100vh;
     top: 0;
 }
 
 .section-service{
-    background-color: white;
+    background-color: var(--secondary-color);
 }
 
 .section-hero p,
@@ -168,7 +172,7 @@ body{
 }
 
 section:nth-child(odd){
-    background: #eee;
+    background: var(--primery-color);
 }
 
 
@@ -259,7 +263,7 @@ section:nth-child(odd){
 }
 .skills ul li {
     align-items: center;
-    background-color: #fff;
+    background-color: var(--secondary-color);
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0,0,0,.09);
     cursor: pointer;
@@ -268,9 +272,7 @@ section:nth-child(odd){
     justify-content: center;
     width: 65px;
 }
-
-
-
+/* ----------Download Button---------- */
 .btn
 {
   position: relative;

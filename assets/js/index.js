@@ -1,3 +1,6 @@
+// ===============================
+//              Intro
+// ===============================
 const splash = document.querySelector('.splash');
 
 document.addEventListener('DOMContentLoaded' , (e)=>{
@@ -30,6 +33,15 @@ navbarLinks.forEach((link) => {
   link.addEventListener("click", closeNavbar);
 });
 
+//auto-close menu bar after clicking
+// const btn = document.querySelector('.btn')
+// btn.addEventListener('click',()=>{
+//     btn.classList.add('active')
+//     setTimeout(() => {
+//         btn.classList.remove('active')
+//     }, 13000);
+// })
+
 // ===============================
 //           Scrollspy
 // ===============================
@@ -54,10 +66,4 @@ window.onscroll = () => {
 
 
 
-                            const btn = document.querySelector('.btn')
-                            btn.addEventListener('click',()=>{
-                                btn.classList.add('active')
-                                setTimeout(() => {
-                                    btn.classList.remove('active')
-                                }, 13000);
-                            })
+                            
