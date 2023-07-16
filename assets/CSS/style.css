@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
 :root{
@@ -25,6 +25,46 @@ body{
     font-family: 'Mulish', sans-serif;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+    
+}
+.splash{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 999999;
+  color: white;
+  text-align: center;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash.display-none{
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: -1000;
+  color: white;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+@keyframes fadeIn{
+  to{
+    opacity: 1;
+  }
+}
+
+.fade-in{
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 /* ===============================
@@ -182,13 +222,13 @@ section:nth-child(odd){
     font-weight: 500;
     line-height: 1.6;
 }
-.hero-text span{
+.hero-text .social-logo{
     cursor: pointer;
     display: flex;
     gap: 13px;
     margin: 25px 0;
 }
-.hero-text span a{
+.hero-text .social-logo a{
     color: #2d2e32;
     font-size: 30px;
 }
@@ -230,6 +270,172 @@ section:nth-child(odd){
 }
 
 
+
+.btn
+{
+  position: relative;
+  width: 200px;
+  height: 70px;
+  /* background: #444; */
+  color: #999;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 0px 50px 50px 0px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.8s;
+  transition-delay: 0.5s;
+  overflow: hidden;
+}
+.btn .fas
+{
+  margin-right: 8px;
+}
+.btn .download
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  white-space: nowrap;
+  transition: 0.3s;
+}
+.btn.active .download
+{
+  transform: translate(-50%,60px);
+  animation: bottom_top 0.5s linear forwards;
+  animation-delay: 12s;
+}
+.btn .completed
+{
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%,-60px);
+  white-space: nowrap;
+  color: #222;
+}
+.btn.active .completed
+{
+  animation: top_bottom 1.3s linear forwards;
+  animation-delay: 6.5s;
+}
+.btn.active
+{
+  width: 600px;
+  height: 15px;
+  animation: btn_width 4.5s linear forwards;
+  animation-delay: 5s;
+}
+.btn.active::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #5c5cff;
+  animation: before_active 10s linear forwards;
+  animation-delay: 1.5s;
+}
+.btn.active::after
+{
+  content: '\f00c';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: "Font Awesome 5 Free";
+  color: #222;
+  transform: translate(-50%,-50%) scale(0);
+  transition: 0.3s;
+  animation: check_scale 2s linear forwards;
+  animation-delay: 8.5s;
+}
+@keyframes before_active
+{
+  0%
+  {
+    width: 0%;
+    height: 100%;
+  }
+  30%,95%
+  {
+    width: 100%;
+    height: 100%;
+  }
+  100%
+  {
+    width: 100%;
+    height: 0%;
+  }
+}
+@keyframes btn_width
+{
+  0%
+  {
+    width: 600px;
+    height: 15px;
+  }
+  20%,70%
+  {
+    width: 200px;
+    height: 70px;
+  }
+  80%,90%
+  {
+    width: 100px;
+    height: 100px;
+  }
+  100%
+  {
+    width: 200px;
+    height: 70px;
+  }
+}
+@keyframes top_bottom
+{
+  0%
+  {
+    transform: translate(-50%,-60px);
+  }
+  20%,90%
+  {
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  100%
+  {
+    top: 120%;
+    transform: translate(-50%,-50%);
+  }
+}
+@keyframes bottom_top
+{
+  0%
+  {
+    transform: translate(-50%,60px);
+  }
+  100%
+  {
+    transform: translate(-50%,-50%);
+  }
+}
+@keyframes check_scale
+{
+  0%
+  {
+    transform: translate(-50%,-50%) scale(0);
+  }
+  20%,90%
+  {
+    transform: translate(-50%,-50%) scale(1.3);
+  }
+  100%
+  {
+    transform: translate(-50%,100px) scale(1.3);
+  }
+}
 
 
 
@@ -296,3 +502,4 @@ section:nth-child(odd){
     margin-left: auto;
     align-items: center;
 }
+

@@ -1,3 +1,12 @@
+const splash = document.querySelector('.splash');
+
+document.addEventListener('DOMContentLoaded' , (e)=>{
+  setTimeout(()=>{
+    splash.classList.add('display-none');
+  }, 2000);
+})
+
+
 // ===============================
 //         Responsive Header
 // ===============================
@@ -42,3 +51,13 @@ window.onscroll = () => {
         };
     });
 }
+
+
+
+                            const btn = document.querySelector('.btn')
+                            btn.addEventListener('click',()=>{
+                                btn.classList.add('active')
+                                setTimeout(() => {
+                                    btn.classList.remove('active')
+                                }, 13000);
+                            })
