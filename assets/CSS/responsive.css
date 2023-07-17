@@ -151,6 +151,46 @@
     }
 }
 /* ===============================
+        About Section
+=============================== */
+@media (max-width: 1020px){
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .work-emoji {
+        /* bottom: 25px;
+        right: 245px; */
+        display: none;
+    }
+    .img-side__main-img {
+        margin-bottom: 35px;
+    }
+    .img-side span {
+        /* bottom: -3px;
+        height: 170px;
+        right: 190px;
+        width: 170px; */
+        display: none;
+    }
+    .img-side span img {
+        width: 170px;
+    }
+    .text-side {
+        margin: 0 auto;
+        max-width: 540px;
+    }
+}
+@media (max-width: 460px){
+    .container {
+        padding: 0 1.7rem;
+    }
+    .img-side__main-img {
+        height: auto;
+        width: 90%;
+    }
+}
+/* ===============================
         Responsive Footer
 =============================== */
 

@@ -54,7 +54,20 @@
                         <div class="social-logo"><a aria-label="linkedin" rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/prince-tagadiya/"><i class="fa-brands fa-linkedin"></i></a>
                             <a aria-label="github" rel="noreferrer" target="_blank" href="https://github.com/Prince-Tagadiya"><i class="fa-brands fa-github"></i></a>
                         </div>
-                        <a href="#" class="btn">
+                        <button class="button">Click Me</button>
+
+    <script>
+      const button = document.querySelector(".button");
+
+      button.addEventListener("click", (e) => {
+        e.preventDefault;
+        button.classList.add("animate");
+        setTimeout(() => {
+          button.classList.remove("animate");
+        }, 600);
+      });
+    </script>
+                        <!-- <a href="#" class="btn">
                             <div class="completed">
                                 <i class="fas fa-check-circle"></i>
                                 <span>Completed</span>
@@ -63,7 +76,16 @@
                                 <i class="fas fa-download"></i>
                                 <span>Download CV</span>
                             </div>
-                        </a>
+                        </a> -->
+
+
+
+
+                        
+
+
+
+
                     </div>
                     <div class="hero-img"></div>
                 </div>
@@ -86,9 +108,23 @@
 <!-- ===============================
             About Section
 =============================== -->
-<section class="section-service" id="about">
-    <div class="hero">
-        <p>about section</p>
+<section class="section-about about" id="about">
+    <div class="hero container">
+        <div class="about-content">
+            <div class="img-side">
+                <img src="assets/img/apple emoji 1.png" alt="emoji" class="work-emoji">
+                <img src="assets/img/about_img.png" alt="mee" class="img-side__main-img">
+                <span>
+                    <img src="assets/img/text2.3d5aa6ba2d0632bb4e0572631c3f9dc2.svg" alt="text">
+                </span>
+            </div>
+            <div class="text-side">
+                <h3>About Me</h3>
+                <h4>A dedicated front-end Developer <br> based in Gujarat, India📍</h4>
+                <p>As a front-end developer, I bring designs to life, creating visually appealing and interactive websites. I thrive on collaboration and constantly seek to enhance the user experience. My passion lies in crafting intuitive and accessible interfaces that leave a lasting impression. I stay updated with the latest technologies to ensure cutting-edge results.</p>
+            </div>
+            
+        </div>
     </div>
 </section>
 
@@ -116,6 +152,7 @@
 <section class="section-hero" id="contact">
     <div class="hero">
         <p>Contact section</p>
+        
     </div>
 </section>
 

@@ -162,6 +162,13 @@ body{
     top: 0;
 }
 
+.section-about{
+    padding: 96px 0;
+    background-color: var(--primery-color);
+    min-height: 655px;
+    top: 0;
+}
+
 .section-service{
     background-color: var(--secondary-color);
 }
@@ -440,7 +447,82 @@ section:nth-child(odd){
 }
 
 
-
+/* ===============================
+        About Section
+=============================== */
+.about {
+  background-color: #fff;
+  padding: 150px 0;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1070px;
+  padding: 0 40px;
+}
+.about-content {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+.img-side {
+  position: relative;
+}
+.work-emoji {
+  bottom: 8px;
+  position: absolute;
+  right: 102px;
+  width: 60px!important;
+  z-index: 10;
+}
+.img-side__main-img {
+  border-radius: 17px;
+  height: 350px;
+  width: 410px;
+}
+.img-side span {
+  background-color: #fff;
+  border-radius: 50%;
+  bottom: -33px;
+  height: 190px;
+  position: absolute;
+  right: 33px;
+  width: 190px;
+}
+.img-side span img {
+  -webkit-animation: rotate 9s linear infinite;
+  animation: rotate 9s linear infinite;
+  width: 190px;
+}
+@keyframes rotate{
+  100% {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+}
+}
+.text-side {
+  padding-right: 15px;
+}
+.text-side h3 {
+  color: #147efb;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.text-side h4 {
+  color: #2d2e32;
+  font-family: Poppins,sans-serif;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.text-side p {
+  color: #767676;
+  font-family: Mulish,sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+}
 /* ===============================
             footer
 =============================== */
@@ -505,3 +587,84 @@ section:nth-child(odd){
     align-items: center;
 }
 
+.button {
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: #7d2ae8;
+  transition: all 0.2s ease;
+}
+.button:active {
+  transform: scale(0.96);
+}
+.button:before,
+.button:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+.button.animate::before {
+  top: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  animation: greentopBubbles ease-in-out 0.6s forwards infinite;
+}
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+.button.animate::after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  animation: greenbottomBubbles ease-in-out 0.6s forwards infinite;
+}
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
