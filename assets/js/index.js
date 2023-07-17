@@ -33,14 +33,6 @@ navbarLinks.forEach((link) => {
   link.addEventListener("click", closeNavbar);
 });
 
-//auto-close menu bar after clicking
-// const btn = document.querySelector('.btn')
-// btn.addEventListener('click',()=>{
-//     btn.classList.add('active')
-//     setTimeout(() => {
-//         btn.classList.remove('active')
-//     }, 13000);
-// })
 
 // ===============================
 //           Scrollspy
@@ -64,7 +56,9 @@ window.onscroll = () => {
     });
 }
 
-
+// ===============================
+//       CV Downlaod Button
+// ===============================
 const button = document.querySelector(".button");
 
       button.addEventListener("click", (e) => {

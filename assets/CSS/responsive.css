@@ -60,7 +60,11 @@
 /* ===============================
         Hero Section
 =============================== */
-
+@media (max-width: 1075px){
+    .hero-main{
+        gap: 60px;
+    }
+}
 @media (max-width: 962px){
     .section-hero {
         height: auto;
@@ -127,6 +131,9 @@
     }
     .hero-text .social-logo a{
         padding-left: 13px;
+    }
+    .button{
+        margin: auto;
     }
 }
 @media (max-width: 500px){
