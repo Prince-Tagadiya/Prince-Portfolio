@@ -202,7 +202,7 @@ section:nth-child(odd){
 .hero-main{
     align-items: center;
     display: flex;
-    gap: 100px;
+    gap: 168px;
     justify-content: center;
     position: relative;
 }
@@ -587,6 +587,7 @@ section:nth-child(odd){
     align-items: center;
 }
 
+
 .button {
   position: relative;
   padding: 10px 22px;
@@ -596,6 +597,7 @@ section:nth-child(odd){
   cursor: pointer;
   background-color: #7d2ae8;
   transition: all 0.2s ease;
+  width: 128px;
 }
 .button:active {
   transform: scale(0.96);
