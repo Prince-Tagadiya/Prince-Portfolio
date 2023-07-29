@@ -66,6 +66,6 @@ const button = document.querySelector(".button");
         button.classList.add("animate");
         setTimeout(() => {
           button.classList.remove("animate");
-        }, 600);
+        }, 5000000);
       });
                             
