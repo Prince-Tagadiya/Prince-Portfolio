@@ -615,7 +615,7 @@ section:nth-child(odd){
   position: relative;
 }
 .contact {
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 112px 0;
 }
 .container01{
@@ -791,3 +791,20 @@ section:nth-child(odd){
 
 
 
+.contact__icon-box i {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 10px; */
+  cursor: pointer;
+}
+
+/* Apply the rotation animation to the icons when hovered */
+.contact__icon-box span i {
+  transition: transform 1s ease;
+}
+
+/* Apply the rotation animation to the icons when hovered */
+.contact__icon-box span:hover i {
+  transform: rotate(360deg);
+}
