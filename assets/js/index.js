@@ -37,7 +37,7 @@ navbarLinks.forEach((link) => {
 // ===============================
 //           Scrollspy
 // ===============================
-
+//normal scroll spy
 // let section = document.querySelectorAll('section');
 // let navLinks = document.querySelectorAll('.sticky header nav ul li a');
 
