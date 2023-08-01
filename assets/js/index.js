@@ -128,3 +128,4 @@ const button = document.querySelector(".button");
         }, 50000);
       });
                             
+      document.getElementById(idTag).classList.add('.projects-grid .pro__img img')

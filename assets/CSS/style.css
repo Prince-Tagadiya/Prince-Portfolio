@@ -450,7 +450,7 @@ section:nth-child(odd){
   padding: 0 40px;
 }
 
-project-content {
+.project-content {
   display: flex;
   flex-direction: column;
 }
@@ -494,6 +494,15 @@ project-content {
 }
 
 .projects-grid .pro__img {
+  /* display: block;
+    position: relative;
+    margin: 0 auto;
+    background-color: hsla(0, 0%, 46%, 0.2);
+    border-radius: 17px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: auto;
+    overflow: hidden;
+    width: 530px; */
   background-color: hsla(0, 0%, 46%, 0.2);
   border-radius: 17px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -508,10 +517,28 @@ project-content {
 }
 
 .projects-grid .pro__img img {
-  height: auto;
-  width: 100%;
+  /* bottom: -1908px; */
+	width: 100%;
+	height: auto;
+	/* position: absolute;
+	z-index: 0;
+  margin:0;
+  padding:0;
+	-webkit-transition: top 11s;
+	-moz-transition: top 11s;
+	-ms-transition: top 11s;
+	-o-transition: top 11s;
+	transition: bottom 11s; */
 }
 
+/* .projects-grid .pro__img:hover img {
+  bottom: 0;
+  -webkit-transition: all 11s;
+  -moz-transition: all 11s;
+  -ms-transition: all 11s;
+  -o-transition: all 11s;
+  transition: all 11s;
+} */
 .projects-grid .pro__text {
   display: flex;
   flex-direction: column;
@@ -638,7 +665,7 @@ links a {
 }
 
 .links a i {
-  font-size: 28px;
+  font-size: 20px;
 }
 
 .fa-brands,
@@ -726,6 +753,25 @@ a:-webkit-any-link {
   border-radius: 17px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
+}
+.projects-grid .pro__img {
+  background-color: hsla(0, 0%, 46%, 0.2);
+  border-radius: 17px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: auto;
+  overflow: hidden;
+  width: 530px;
+}
+
+.projects-grid .pro__img img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out; /* Added a transition property */
+}
+
+/* Hover effect: Scroll image from top to bottom */
+.projects-grid .pro__img:hover img {
+  transform: translateY(-50%); /* Adjust this value to control the amount of scroll */
 }
 
 .reversed-proj {
@@ -929,3 +975,60 @@ a:-webkit-any-link {
 
 
 
+:root {
+  --text: #2B3044;
+  --line: #BBC1E1;
+  --line-active: #275EFE;
+}
+
+p {
+  font-size: 18px;
+  margin: 0;
+  color: var(--text);
+}
+p a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  margin: 0 var(--spacing, 0px);
+  transition: margin 0.25s;
+}
+p a svg {
+  width: 76px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 7px) translateZ(0);
+  fill: none;
+  stroke: var(--stroke, var(--line));
+  stroke-linecap: round;
+  stroke-width: 2px;
+  stroke-dasharray: var(--offset, 69px) 278px;
+  stroke-dashoffset: 361px;
+  transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+}
+p a:hover {
+  --spacing: 4px;
+  --stroke: var(--line-active);
+  --stroke-delay: .1s;
+  --offset: 180px;
+}
+
+
+.Live_demo p a svg {
+  width: 207px;
+  height: 63px;
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  transform: translate(-50%, 7px) translateZ(0);
+  fill: none;
+  stroke: var(--stroke, var(--line));
+  stroke-linecap: round;
+  stroke-width: 1.2px;
+  stroke-dasharray: var(--offset, 69px) 278px;
+  stroke-dashoffset: 361px;
+  transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+}
