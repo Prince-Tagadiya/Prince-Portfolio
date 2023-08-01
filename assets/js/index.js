@@ -109,7 +109,7 @@ navLinks.forEach((link) => {
         if (target) {
             window.scrollTo({
                 top: target.offsetTop,
-                behavior: 'smooth',
+                behavior: 'smooth', 
             });
         }
     });
