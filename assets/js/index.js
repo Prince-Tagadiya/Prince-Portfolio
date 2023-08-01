@@ -96,7 +96,7 @@ function handleScroll() {
             }
         }
     });
-}
+} 
 
 // Add scroll event listener to the window
 window.addEventListener('scroll', handleScroll);
