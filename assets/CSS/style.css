@@ -444,12 +444,6 @@ section:nth-child(odd){
   padding: 150px 0;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1070px;
-  padding: 0 40px;
-}
-
 .project-content {
   display: flex;
   flex-direction: column;
