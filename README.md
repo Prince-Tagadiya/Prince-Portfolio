@@ -12,7 +12,7 @@ As a passionate web developer, I believe that having a well-designed and functio
 
 <!-- - **Skill Section** 🚀: Highlighting my skills as a web developer, this section provides an overview of the programming languages, frameworks, and tools I have mastered. It showcases my proficiency in HTML, CSS, JavaScript, and my ability to work with frameworks such as Bootstrap.
   <img width="1118" alt="Screenshot 2023-07-15 at 1 22 01 PM" src="https://github.com/Prince-Tagadiya/Prince-Portfolio/assets/131431955/92756778-9f75-4436-9231-cabd64cfe62c">
-You can visit the live website [here](https://prince-tagadiya.github.io/Prince-Portfolio/).-->
+You can visit the live website [here](https://prince-tagadiya.github.io/Prince-Portfolio/). -->
 
 - **Projects Showcase** 🎉: The portfolio section features a collection of my notable projects, demonstrating my capabilities and creativity in web development. Each project includes a detailed description, technologies used, and my role in its development. This section serves as a showcase of my ability to bring ideas to life through coding.
   ![skill](https://github.com/Prince-Tagadiya/Prince-Portfolio/assets/131431955/70268cbd-bff5-411e-9b91-a23d7ab228b9)<br>
