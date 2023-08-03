@@ -224,19 +224,17 @@
     .projects-grid .pro__img {
         width: 100%;
     }
-    .projects-grid .pro__img {
-        width: 100%;
-    }
-}
-@media (max-width: 460px){
-    .container {
-        padding: 0 17px;
-    }
 }
 @media (max-width: 400px){
     .projects-grid .pro__1 {
         width: 100%;
     }
+    .projects-grid .pro__text {
+        width: 100%;
+    }
+}
+@media (max-width: 380px){
+
 }
 /* ===============================
         Contact Section
