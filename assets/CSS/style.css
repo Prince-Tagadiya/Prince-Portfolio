@@ -434,7 +434,6 @@ section:nth-child(odd){
 =============================== */
 
 .section-project {
-  /* padding: 960px 0; */
   background-color: var(--primery-color);
   height: auto;
   top: 0;
@@ -495,15 +494,6 @@ section:nth-child(odd){
 }
 
 .projects-grid .pro__img {
-  /* display: block;
-    position: relative;
-    margin: 0 auto;
-    background-color: hsla(0, 0%, 46%, 0.2);
-    border-radius: 17px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: auto;
-    overflow: hidden;
-    width: 530px; */
   background-color: hsla(0, 0%, 46%, 0.2);
   border-radius: 17px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -517,29 +507,6 @@ section:nth-child(odd){
   transition: transform 10s ease-in-out 0s;
 }
 
-.projects-grid .pro__img img {
-  /* bottom: -1908px; */
-	width: 100%;
-	height: auto;
-	/* position: absolute;
-	z-index: 0;
-  margin:0;
-  padding:0;
-	-webkit-transition: top 11s;
-	-moz-transition: top 11s;
-	-ms-transition: top 11s;
-	-o-transition: top 11s;
-	transition: bottom 11s; */
-}
-
-/* .projects-grid .pro__img:hover img {
-  bottom: 0;
-  -webkit-transition: all 11s;
-  -moz-transition: all 11s;
-  -ms-transition: all 11s;
-  -o-transition: all 11s;
-  transition: all 11s;
-} */
 .projects-grid .pro__text {
   display: flex;
   flex-direction: column;
@@ -615,103 +582,8 @@ section:nth-child(odd){
   margin-top: 30px;
 }
 
-links a {
-  color: #2d2e32;
-  font-size: 17px;
-  font-weight: 500;
-  gap: 5px;
-  text-decoration: none;
-}
-
-.links,
-.links a {
-  align-items: center;
-  display: flex;
-}
-
-.links a i {
-  font-size: 28px;
-}
-
-.fa-brands,
-.fab {
-  font-weight: 400;
-}
-
-.fa-brands,
-.fab {
-  font-family: "Font Awesome 6 Brands";
-}
-
-.fa,
-.fa-brands,
-.fa-classic,
-.fa-regular,
-.fa-sharp,
-.fa-solid,
-.fab,
-.far,
-.fas {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: var(--fa-display, inline-block);
-  font-style: normal;
-  font-variant: normal;
-  line-height: 1;
-  text-rendering: auto;
-}
-
-.fa-github:before {
-  content: "\f09b";
-}
-
 .links a i {
   font-size: 20px;
-}
-
-.fa-brands,
-.fab {
-  font-weight: 400;
-}
-
-.fa-brands,
-.fab {
-  font-family: "Font Awesome 6 Brands";
-}
-
-.fa,
-.fa-brands,
-.fa-classic,
-.fa-regular,
-.fa-sharp,
-.fa-solid,
-.fab,
-.far,
-.fas {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: var(--fa-display, inline-block);
-  font-style: normal;
-  font-variant: normal;
-  line-height: 1;
-  text-rendering: auto;
-}
-
-i {
-  font-style: italic;
-}
-
-.links a {
-  color: #2d2e32;
-  font-size: 17px;
-  font-weight: 500;
-  gap: 5px;
-  text-decoration: none;
-}
-
-a:-webkit-any-link {
-  color: -webkit-link;
-  cursor: pointer;
 }
 
 .projects-grid .pro__text {
@@ -731,17 +603,6 @@ a:-webkit-any-link {
   text-decoration: none;
 }
 
-.links,
-.links a {
-  align-items: center;
-  display: flex;
-}
-
-.fa-arrow-up-right-from-square:before,
-.fa-external-link:before {
-  content: "\f08e";
-}
-
 .projects-grid .pro__1 {
   flex-direction: row;
   gap: 80px;
@@ -755,19 +616,11 @@ a:-webkit-any-link {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
 }
-.projects-grid .pro__img {
-  background-color: hsla(0, 0%, 46%, 0.2);
-  border-radius: 17px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: auto;
-  overflow: hidden;
-  width: 530px;
-}
 
 .projects-grid .pro__img img {
   width: 100%;
   height: auto;
-  transition: transform 0.3s ease-in-out; /* Added a transition property */
+  transition: transform 7s ease-in-out; /* Added a transition property */
 }
 
 /* Hover effect: Scroll image from top to bottom */
@@ -832,9 +685,6 @@ a:-webkit-any-link {
   color: #147efb;
   font-size: 30px;
 }
-.fa-map-location-dot:before, .fa-map-marked-alt:before {
-  content: "\f5a0";
-}
 .contact__info {
   display: flex;
   flex-direction: column;
@@ -866,21 +716,6 @@ a:-webkit-any-link {
   font-size: 30px;
 }
 
-.fa-solid, .fas {
-  font-weight: 900;
-}
-.fa-classic, .fa-regular, .fa-solid, .far, .fas {
-  font-family: "Font Awesome 6 Free";
-}
-.fa, .fa-brands, .fa-classic, .fa-regular, .fa-sharp, .fa-solid, .fab, .far, .fas {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: var(--fa-display,inline-block);
-  font-style: normal;
-  font-variant: normal;
-  line-height: 1;
-  text-rendering: auto;
-}
 .contact__info {
   display: flex;
   flex-direction: column;
