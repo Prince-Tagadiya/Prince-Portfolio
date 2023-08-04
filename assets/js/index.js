@@ -11,9 +11,10 @@ let calcScrollValue = () => {
   let scrollValue = Math.round((pos * 100) / calcHeight);
   if (pos > 100) {
     scrollProgress.style.display = "grid";
-  } else {
+  }else {
     scrollProgress.style.display = "none";
   }
+  
   scrollProgress.addEventListener("click", () => {
     document.documentElement.scrollTop = 0;
   });
