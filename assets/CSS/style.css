@@ -27,8 +27,10 @@ body{
     font-family: 'Mulish', sans-serif;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-  
+    transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--font-color);
 }
+
 /* ===============================
           Back To Top
 =============================== */
@@ -66,9 +68,9 @@ body{
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   z-index: 999999;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   display: flex;
   align-items: center;
@@ -82,11 +84,18 @@ body{
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   z-index: -1000;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   transition: all 0.5s;
+}
+
+.bottom-right{
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
 }
 
 @keyframes fadeIn{
@@ -95,10 +104,22 @@ body{
   }
 }
 
+.dark-mode .splash{
+  background-color: black;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dark-mode .splash.display-none{
+  background-color: black;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .fade-in{
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
 }
+
 
 /* ===============================
             Header
@@ -114,6 +135,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .header .logo{
     color: var(--font-color);
@@ -135,6 +157,22 @@ body{
     font-weight: 700;
     line-height: normal;
     list-style: none;
+    display: flex;
+    align-items: center; /* Vertically align items */
+    padding: 0;
+}
+.fa-sun:before {
+  content: "\f185"; /* Unicode for sun icon */
+  color: black;
+  display: block;
+  width: 10px;
+}
+
+.fa-moon:before {
+  content: "\f186"; /* Unicode for moon icon */
+  display: block;
+  width: 10px;
+  color: white;
 }
 .navbar-link{
     transition: .3s;
@@ -171,14 +209,16 @@ body{
             Section
 =============================== */
 
-.section-hero,
-.section-service{
+.section-hero{
     padding: 96px 0;
-    background-color: var(--primery-color);
+    background-color: #eee;
     height: 100vh;
     top: 0;
 }
-
+.dark-mode {
+  background-color: black;
+  color: white;
+}
 .section-about{
     padding: 96px 0;
     background-color: var(--primery-color);
@@ -225,7 +265,6 @@ body{
     position: relative;
 }
 .hero-text h1{
-    color: var(--font-color);
     font-size: 55px;
     line-height: 65px;
     margin-bottom: 20px;
@@ -438,7 +477,6 @@ body{
   text-transform: uppercase;
 }
 .text-side h4 {
-  color: #2d2e32;
   font-family: Poppins,sans-serif;
   font-size: 25px;
   margin-bottom: 20px;
@@ -480,7 +518,6 @@ body{
 }
 
 .project-content h3 {
-  color: #2d2e32;
   font-size: 25px;
   margin-bottom: 60px;
 }
@@ -533,17 +570,10 @@ body{
 }
 
 .projects-grid .pro__text h3 {
-  color: #2d2e32;
   font-size: 17px;
   margin-bottom: 20px;
   position: relative;
   text-transform: uppercase;
-}
-
-.project-content h3 {
-  color: #2d2e32;
-  font-size: 25px;
-  margin-bottom: 60px;
 }
 
 .projects-grid .pro__text p {
@@ -567,14 +597,6 @@ body{
   gap: 10px;
   justify-content: center;
   margin-top: 10px;
-}
-
-.projects-grid .pro__text p {
-  color: #767676;
-  font-size: 17px;
-  font-weight: 500;
-  text-align: center;
-  text-transform: none;
 }
 
 .stack p {
@@ -612,11 +634,11 @@ body{
 }
 
 .links a {
-  color: #2d2e32;
   font-size: 17px;
   font-weight: 500;
   gap: 5px;
   text-decoration: none;
+  color: #2D2E32;
 }
 
 .projects-grid .pro__1 {
@@ -628,7 +650,7 @@ body{
 
 .projects-grid .pro {
   background-color: #fff;
-  border-radius: 17px;
+  border-radius: 37px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
 }
@@ -677,7 +699,6 @@ body{
   text-transform: uppercase;
 }
 .contact__title h3 {
-  color: #2d2e32;
   font-size: 25px;
 }
 .contact__icons {
@@ -707,7 +728,6 @@ body{
   gap: 05px;
 }
 .contact__info h3 {
-  color: #2d2e32;
   font-size: 17px;
 }
 .contact__info a, .contact__info p {
@@ -732,27 +752,7 @@ body{
   font-size: 30px;
 }
 
-.contact__info {
-  display: flex;
-  flex-direction: column;
-  gap: 05px;
-}
-.contact__info h3 {
-  color: #2d2e32;
-  font-size: 17px;
-}
-.contact__info a, .contact__info p {
-  color: #767676;
-  cursor: pointer;
-  font-size: 17px;
-  text-decoration: none;
-}
-.contact__icon-box i {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-}
+
 /* Apply the rotation animation to the icons when hovered */
 .contact__icon-box span i {
   transition: transform 1s ease;
@@ -883,3 +883,7 @@ p a:hover {
   stroke-dashoffset: 361px;
   transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
 }
+
+
+
+

@@ -1,3 +1,4 @@
+
 // ===============================
 //         Back To Top
 // ===============================
@@ -139,18 +140,50 @@ navLinks.forEach((link) => {
         }
     });
 });
-
+      
 // ===============================
-//       CV Downlaod Button
+//           Dark Mode
 // ===============================
-const button = document.querySelector(".button");
 
-      button.addEventListener("click", (e) => {
-        e.preventDefault;
-        button.classList.add("animate");
-        setTimeout(() => {
-          button.classList.remove("animate");
-        }, 50000);
-      });
-                            
-      document.getElementById(idTag).classList.add('.projects-grid .pro__img img')
+const toggleDarkModeButton = document.getElementById('toggleDarkMode');
+const body = document.body;
+
+toggleDarkModeButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const darkModeEnabled = body.classList.contains('dark-mode');
+    updateDarkModePreference(darkModeEnabled);
+});
+
+function updateDarkModePreference(enabled) {
+    if (enabled) {
+        body.classList.add('dark-mode');
+        toggleDarkModeButton.classList.remove('fa-sun');
+        toggleDarkModeButton.classList.add('fa-moon');
+    } else {
+        body.classList.remove('dark-mode');
+        toggleDarkModeButton.classList.remove('fa-moon');
+        toggleDarkModeButton.classList.add('fa-sun');
+    }
+    localStorage.setItem('darkModeEnabled', enabled ? 'true' : 'false');
+}
+
+// Check if dark mode was enabled before
+const darkModeEnabled = JSON.parse(localStorage.getItem('darkModeEnabled'));
+updateDarkModePreference(darkModeEnabled);
+
+// Function to detect and update device color scheme
+function updateDeviceColorScheme() {
+    const isDarkModePreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDarkModePreferred) {
+        updateDarkModePreference(true);
+    } else {
+        updateDarkModePreference(false);
+    }
+}
+
+// Check device color scheme when the page loads and when it changes
+window.addEventListener('DOMContentLoaded', updateDeviceColorScheme);
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateDeviceColorScheme);
+
+
+

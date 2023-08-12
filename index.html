@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/CSS/style.css">
     <link rel="stylesheet" href="assets/CSS/responsive.css">
     <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="dark.css">
     <title>Prince Portfolio</title>
 </head>
 
@@ -24,13 +25,14 @@
              Intro
 =============================== -->
 <div class="splash">
-    <h1 class="fade-in">Welcome To Prince Portfolio Website</h1>
+    <h1 class="fade-in">light and dark mode was working according to your device Appearance</h1>
+    <!-- <p class="fade-in bottom-right">light and dark mode was working according to your device Appearance</p> -->
 </div>
 <!-- ===============================
              Header
 =============================== -->
 
-<div class="sticky" id="myHeader">    
+<div class="sticky" id="myHeader">
     <header class="header" id="myheader">
         <a class="logo" href="index.html">Prince.dev</a>
 
@@ -41,6 +43,7 @@
                 <!-- <li><a class="navbar-link" href="#skills">Skills</a></li> -->
                 <li><a class="navbar-link" href="#projects">Projects</a></li>
                 <li><a class="navbar-link" href="#contact">Contact </a></li>
+                <li><i id="toggleDarkMode" class="fa-solid fa-sun dark-mode-toggle"></i></li>
             </ul>
         </nav>
 
@@ -50,6 +53,7 @@
         </div>
     </header>
 </div>
+
 
 <!-- ===============================
             Hero Section
@@ -83,6 +87,7 @@
                 </div>
             </div>
         </div>
+        <!-- <p class="fade-in bottom-right">light and dark mode was working according to your device Appearance</p> -->
 </section>
     
 <!-- ===============================
@@ -119,7 +124,7 @@
 </section> -->
 
 <!-- ===============================
-            Projects Section bug 
+            Projects Section 
 =============================== --> 
 
 <section class="section-project" id="projects">
@@ -139,28 +144,28 @@
                             <div class="pro__text">
                                 <h3>Car Rental 🚗</h3>
                                 <p>A car rental website is an online platform that allows users to rent cars for personal or business use. The website provides an interface for searching, comparing, and reserving cars.</p>
-                                <div class="stack">
+                                <!-- <div class="stack">
                                     <p>React</p>
                                     <p>SCSS</p>
-                                </div>
+                                </div> -->
                                 <div class="links">
-                                    <!-- <a target="_blank" href="https://github.com/stefvndev/car-rental" rel="noreferrer">Code <i class="fa-brands fa-github"></i></a> -->
-                                    <p>
+                                    <a target="_blank" href="https://github.com/Prince-Tagadiya/Frontend-Mentor/tree/qr-code-component/qr-code-component-main" rel="noreferrer">Code <i class="fa-brands fa-github"></i></a>
+                                    <!-- <p>
                                         <a target="_blank" href="https://github.com/Prince-Tagadiya/Frontend-Mentor/tree/qr-code-component/qr-code-component-main">
                                             Code<i class="fa-brands fa-github"></i>
                                             <svg viewBox="0 0 70 36">
                                                 <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527"></path></svg>
                                         </a>
-                                    </p>
-                                    <!-- <a target="_blank" href="https://car-rental-ten.vercel.app/" rel="noreferrer">Live Demo<i class="fa-solid fa-arrow-up-right-from-square link-icon"></i></a> -->
+                                    </p> -->
+                                    <a target="_blank" href="https://64a8f230bcf4a147e2b0bec4--lucent-fudge-1c6c80.netlify.app/" rel="noreferrer">Live Demo<i class="fa-solid fa-arrow-up-right-from-square link-icon"></i></a>
                                     <div class="Live_demo">
-                                    <p>
+                                    <!-- <p>
                                         <a target="_blank" href="https://64a8f230bcf4a147e2b0bec4--lucent-fudge-1c6c80.netlify.app/">
                                             Live Demo<i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
                                             <svg viewBox="0 0 70 36">
                                                 <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527"></path></svg>
                                         </a>
-                                    </p>
+                                    </p> -->
                                 </div>
                                 </div>
                             </div>
@@ -174,28 +179,28 @@
                             <div class="pro__text">
                                 <h3>coindom 🪙</h3>
                                 <p>Coindom is a crypto app that allows users to search for information about various cryptocurrencies in real-time.</p>
-                                <div class="stack">
+                                <!-- <div class="stack">
                                     <p>React</p>
                                     <p>SCSS</p>
-                                </div>
+                                </div> -->
                                 <div class="links">
-                                    <!-- <a target="_blank" href="https://github.com/stefvndev/car-rental" rel="noreferrer">Code <i class="fa-brands fa-github"></i></a> -->
-                                    <p>
+                                    <a target="_blank" href="https://github.com/Prince-Tagadiya/Frontend-Mentor/tree/qr-code-component/chat-app-css-illustration-master" rel="noreferrer">Code <i class="fa-brands fa-github"></i></a>
+                                    <!-- <p>
                                         <a target="_blank" href="https://github.com/Prince-Tagadiya/Frontend-Mentor/tree/qr-code-component/chat-app-css-illustration-master">
                                             Code<i class="fa-brands fa-github"></i>
                                             <svg viewBox="0 0 70 36">
                                                 <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527"></path></svg>
                                         </a>
-                                    </p>
-                                    <!-- <a target="_blank" href="https://car-rental-ten.vercel.app/" rel="noreferrer">Live Demo<i class="fa-solid fa-arrow-up-right-from-square link-icon"></i></a> -->
+                                    </p> -->
+                                    <a target="_blank" href="https://64aa56c351b9997bfb72f3fd--celadon-dolphin-bb314b.netlify.app/" rel="noreferrer">Live Demo<i class="fa-solid fa-arrow-up-right-from-square link-icon"></i></a>
                                     <div class="Live_demo">
-                                    <p>
+                                    <!-- <p>
                                         <a target="_blank" href="https://64aa56c351b9997bfb72f3fd--celadon-dolphin-bb314b.netlify.app/">
                                             Live Demo<i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
                                             <svg viewBox="0 0 70 36">
                                                 <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527"></path></svg>
                                         </a>
-                                    </p>
+                                    </p> -->
                                 </div>
                                 </div>
                             </div>

@@ -212,7 +212,7 @@
     .projects-grid .pro__1 {
         flex-direction: column!important;
         gap: 30px;
-        height: 750px;
+        height: auto;
         margin: 0 auto;
         width: -moz-fit-content;
         width: -webkit-fit-content;
