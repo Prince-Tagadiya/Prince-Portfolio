@@ -50,9 +50,13 @@
   .dark-mode .section-hero{
     background-color: #2A2A2A;
   }
-  /* .dark-mode p{
-    color: #787878;
-  } */
+  .dark-mode .hero-text p, 
+  .dark-mode .text-side p,
+  .dark-mode .projects-grid .pro__text p,
+  .dark-mode .contact__info a,
+  .dark-mode .contact__info p{
+    color: #8e8e8e;
+  }
   .dark-mode .skills p{
     color: white;
     border-right: 2px solid white;
