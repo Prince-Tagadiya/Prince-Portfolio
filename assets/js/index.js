@@ -1,3 +1,24 @@
+const logoItems = document.querySelectorAll('.logos ul li');
+
+logoItems.forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+        logoItems.forEach((li, i) => {
+            if (i === index) {
+                li.style.transform = 'translateY(-15px)';
+            } else if (i === index - 1 || i === index + 1) {
+                li.style.transform = 'translateY(-5px)';
+            } else {
+                li.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    item.addEventListener('mouseleave', () => {
+        logoItems.forEach(li => {
+            li.style.transform = 'translateY(0)';
+        });
+    });
+});
 
 // ===============================
 //         Back To Top

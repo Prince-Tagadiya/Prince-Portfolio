@@ -107,12 +107,12 @@ body{
 .dark-mode .splash{
   background-color: black;
   color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  /* transition: background-color 0.3s ease, color 0.3s ease; */
 }
 .dark-mode .splash.display-none{
   background-color: black;
   color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  /* transition: background-color 0.3s ease, color 0.3s ease; */
 }
 
 .fade-in{
@@ -329,6 +329,11 @@ body{
     justify-content: center;
     width: 65px;
 }
+
+.logos ul li {
+  transition: transform 0.1s ease-in-out;
+}
+
 /* ----------Download Button---------- */
 .button {
   position: relative;
