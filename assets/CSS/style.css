@@ -204,7 +204,11 @@ body{
 .sticky + .content {
   padding-top: 102px;
 }
-
+.mobile-nav-icon,
+.dark-mode-toggle {
+    fill: white;
+    cursor: pointer; /* Add this line to change cursor to pointer on hover */
+}
 /* ===============================
             Section
 =============================== */

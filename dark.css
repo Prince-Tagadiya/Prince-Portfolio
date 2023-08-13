@@ -95,6 +95,7 @@
   }
   .dark-mode .fa-solid{
     color: white;
+    cursor: pointer;
   }
   .dark-mode .contact__icon-box span i{
     color: #147efb;
