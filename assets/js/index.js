@@ -1,210 +1,207 @@
+// ===============================
+//        Welcome Message 
+// ===============================
+document.addEventListener("DOMContentLoaded", function() {
+  // Get the elements
+  const welcomeMessage = document.getElementById("welcome-message");
+  const closeButton = document.getElementById("close-welcome");
+
+  // Close button event listener
+  closeButton.addEventListener("click", function() {
+    // Hide welcome message and allow scrolling
+    welcomeMessage.style.display = "none";
+    document.documentElement.classList.remove("freeze-scroll");
+    document.body.classList.remove("freeze-scroll");
+  });
+
+  // Display welcome message immediately
+  function showWelcomeMessage() {
+    welcomeMessage.style.display = "block";
+    // Freeze scrolling while message is shown
+    document.documentElement.classList.add("freeze-scroll");
+    document.body.classList.add("freeze-scroll");
+  }
+
+  showWelcomeMessage();
+});
+
+// ===============================
+//        Animated Tech Stack 
+// ===============================
 const logoItems = document.querySelectorAll('.logos ul li');
 
+// Hover animation for tech stack logos
 logoItems.forEach((item, index) => {
-    item.addEventListener('mouseenter', () => {
-        logoItems.forEach((li, i) => {
-            if (i === index) {
-                li.style.transform = 'translateY(-15px)';
-            } else if (i === index - 1 || i === index + 1) {
-                li.style.transform = 'translateY(-5px)';
-            } else {
-                li.style.transform = 'translateY(0)';
-            }
-        });
+  item.addEventListener('mouseenter', () => {
+    logoItems.forEach((li, i) => {
+      const translateYValue = (i === index) ? '-15px' : (i === index - 1 || i === index + 1) ? '-5px' : '0';
+      li.style.transform = `translateY(${translateYValue})`;
     });
+  });
 
-    item.addEventListener('mouseleave', () => {
-        logoItems.forEach(li => {
-            li.style.transform = 'translateY(0)';
-        });
+  // Reset animation on mouse leave
+  item.addEventListener('mouseleave', () => {
+    logoItems.forEach(li => {
+      li.style.transform = 'translateY(0)';
     });
+  });
 });
 
 // ===============================
 //         Back To Top
 // ===============================
-let calcScrollValue = () => {
-  let scrollProgress = document.getElementById("progress");
-  let progressValue = document.getElementById("progress-value");
-  let pos = document.documentElement.scrollTop;
-  let calcHeight =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  let scrollValue = Math.round((pos * 100) / calcHeight);
-  if (pos > 100) {
-    scrollProgress.style.display = "grid";
-  }else {
-    scrollProgress.style.display = "none";
-  }
+function calcScrollValue() {
+  const scrollProgress = document.getElementById("progress");
+  const pos = document.documentElement.scrollTop;
+  const calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrollValue = Math.round((pos * 100) / calcHeight);
+
+  // Show/hide scroll-to-top button
+  scrollProgress.style.display = (pos > 100) ? "grid" : "none";
   
+  // Scroll to top on button click
   scrollProgress.addEventListener("click", () => {
     document.documentElement.scrollTop = 0;
   });
+  
+  // Update progress bar gradient
   scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
-};
+}
 
-window.onscroll = calcScrollValue;
-window.onload = calcScrollValue;
+window.addEventListener('scroll', calcScrollValue);
+window.addEventListener('load', calcScrollValue);
+
 // ===============================
 //              Intro
 // ===============================
 const splash = document.querySelector('.splash');
 
-document.addEventListener('DOMContentLoaded' , (e)=>{
-  setTimeout(()=>{
+document.addEventListener('DOMContentLoaded', (e) => {
+  // Hide splash screen after a delay
+  setTimeout(() => {
     splash.classList.add('display-none');
-  }, 2000);
-})
-
+  }, 6000);
+});
 
 // ===============================
 //         Responsive Header
 // ===============================
-
-const mobile_nav = document.querySelector(".mobile-navbar-btn");
-const nav_header = document.querySelector(".header");
+const mobileNav = document.querySelector(".mobile-navbar-btn");
+const navHeader = document.querySelector(".header");
 const navbarLinks = document.querySelectorAll(".navbar-link");
 
-const toggleNavbar = () => {
-  nav_header.classList.toggle("active");
-};
+// Toggle mobile navigation menu
+function toggleNavbar() {
+  navHeader.classList.toggle("active");
+}
 
-const closeNavbar = () => {
-  nav_header.classList.remove("active");
-};
+// Close the mobile navigation menu on link click
+function closeNavbar() {
+  navHeader.classList.remove("active");
+}
 
-mobile_nav.addEventListener("click", toggleNavbar);
+mobileNav.addEventListener("click", toggleNavbar);
 
-// Close the navbar when a link is clicked
 navbarLinks.forEach((link) => {
   link.addEventListener("click", closeNavbar);
 });
 
-
 // ===============================
 //           Scrollspy
 // ===============================
-//normal scroll spy
-// let section = document.querySelectorAll('section');
-// let navLinks = document.querySelectorAll('.sticky header nav ul li a');
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.sticky header nav ul li a');
+const contactLink = navLinks[navLinks.length - 1];
 
-// window.onscroll = () => {
-//     section.forEach(sec =>{
-//         let top = window.scrollY;
-//         let offset = sec.offsetTop - 150;
-//         let height = sec.offsetHeight;
-//         let id = sec.getAttribute('id');
-
-//         if(top >= offset && top < offset + height){
-//             navLinks.forEach(links =>{
-//                 links.classList.remove('active1');
-//                 document.querySelector('.sticky header nav ul li a[href*=' + id + ']').classList.add('active1');
-//             });
-//         };
-//     });
-// }
-
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('.sticky header nav ul li a');
-let contactLink = navLinks[navLinks.length - 1];
-
-// Function to add or remove the 'active1' class from navigation links
+// Set active link in navigation based on scrolling
 function setActiveLink(link) {
-    navLinks.forEach((navLink) => {
-        navLink.classList.remove('active1');
-    });
-    link.classList.add('active1');
+  navLinks.forEach((navLink) => {
+    navLink.classList.remove('active1');
+  });
+  link.classList.add('active1');
 }
 
-// Function to handle scroll event and activate the appropriate link
+// Handle scroll event to activate appropriate link
 function handleScroll() {
-    let scrollPosition = window.scrollY;
-    let windowHeight = window.innerHeight;
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const lastSection = sections[sections.length - 1];
+  const lastSectionOffset = lastSection.offsetTop;
+  const lastSectionHeight = lastSection.offsetHeight;
 
-    let lastSection = sections[sections.length - 1];
-    let lastSectionOffset = lastSection.offsetTop;
-    let lastSectionHeight = lastSection.offsetHeight;
+  // Activate contact link when scrolling reaches last section
+  if (scrollPosition + windowHeight >= lastSectionOffset + lastSectionHeight) {
+    setActiveLink(contactLink);
+    return;
+  }
 
-    // Activate the contact link when the user scrolls to the last section
-    if (scrollPosition + windowHeight >= lastSectionOffset + lastSectionHeight) {
-        setActiveLink(contactLink);
-        return;
+  sections.forEach((section) => {
+    const offset = section.offsetTop - 150;
+    const height = section.offsetHeight;
+
+    if (scrollPosition >= offset && scrollPosition < offset + height) {
+      const id = section.getAttribute('id');
+      const correspondingLink = document.querySelector(`.sticky header nav ul li a[href="#${id}"]`);
+      if (correspondingLink) {
+        setActiveLink(correspondingLink);
+      }
     }
+  });
+}
 
-    sections.forEach((section) => {
-        let offset = section.offsetTop - 150;
-        let height = section.offsetHeight;
-
-        if (scrollPosition >= offset && scrollPosition < offset + height) {
-            let id = section.getAttribute('id');
-            let correspondingLink = document.querySelector(`.sticky header nav ul li a[href="#${id}"]`);
-            if (correspondingLink) {
-                setActiveLink(correspondingLink);
-            }
-        }
-    });
-} 
-
-// Add scroll event listener to the window
 window.addEventListener('scroll', handleScroll);
 
-// Add click event listeners to navigation links for smooth scrolling
 navLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-        event.preventDefault();
-        let target = document.querySelector(link.getAttribute('href'));
-        if (target) {
-            window.scrollTo({
-                top: target.offsetTop,
-                behavior: 'smooth', 
-            });
-        }
-    });
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      // Smooth scroll to target section
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  });
 });
-      
+
 // ===============================
 //           Dark Mode
 // ===============================
-
 const toggleDarkModeButton = document.getElementById('toggleDarkMode');
 const body = document.body;
 
+// Toggle dark mode on button click
 toggleDarkModeButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    const darkModeEnabled = body.classList.contains('dark-mode');
-    updateDarkModePreference(darkModeEnabled);
+  body.classList.toggle('dark-mode');
+  const darkModeEnabled = body.classList.contains('dark-mode');
+  updateDarkModePreference(darkModeEnabled);
 });
 
+// Update dark mode preference in local storage and UI
 function updateDarkModePreference(enabled) {
-    if (enabled) {
-        body.classList.add('dark-mode');
-        toggleDarkModeButton.classList.remove('fa-sun');
-        toggleDarkModeButton.classList.add('fa-moon');
-    } else {
-        body.classList.remove('dark-mode');
-        toggleDarkModeButton.classList.remove('fa-moon');
-        toggleDarkModeButton.classList.add('fa-sun');
-    }
-    localStorage.setItem('darkModeEnabled', enabled ? 'true' : 'false');
+  if (enabled) {
+    body.classList.add('dark-mode');
+    toggleDarkModeButton.classList.remove('fa-sun');
+    toggleDarkModeButton.classList.add('fa-moon');
+  } else {
+    body.classList.remove('dark-mode');
+    toggleDarkModeButton.classList.remove('fa-moon');
+    toggleDarkModeButton.classList.add('fa-sun');
+  }
+  localStorage.setItem('darkModeEnabled', enabled ? 'true' : 'false');
 }
 
-// Check if dark mode was enabled before
-const darkModeEnabled = JSON.parse(localStorage.getItem('darkModeEnabled'));
-updateDarkModePreference(darkModeEnabled);
-
-// Function to detect and update device color scheme
+// Check device's color scheme and update dark mode accordingly
 function updateDeviceColorScheme() {
-    const isDarkModePreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (isDarkModePreferred) {
-        updateDarkModePreference(true);
-    } else {
-        updateDarkModePreference(false);
-    }
+  const isDarkModePreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (isDarkModePreferred) {
+    updateDarkModePreference(true);
+  } else {
+    updateDarkModePreference(false);
+  }
 }
 
-// Check device color scheme when the page loads and when it changes
 window.addEventListener('DOMContentLoaded', updateDeviceColorScheme);
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateDeviceColorScheme);
-
-
 

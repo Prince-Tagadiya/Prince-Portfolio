@@ -29,7 +29,243 @@ body{
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
   color: var(--font-color);
+  
+  
+
 }
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  backdrop-filter: blur(10px); /* Apply a blur effect to the content behind the overlay */
+  display: none;
+}
+html.freeze-scroll, body.freeze-scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ===============================
+        Welcome Message
+=============================== */
+
+.welcome-container .tab .contant {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+}
+
+.welcome-container .tab input:checked ~ .contant {
+  max-height: 100vh;
+  overflow: auto;
+}
+
+
+.welcome-container{
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.welcome-container h1{
+  color: #333;
+}
+.welcome-container .tab{
+  position: relative;
+  background: #fff;
+  padding: 0 20px 20px;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  /* overflow: hidden; */
+}
+.welcome-container .tab input{
+  appearance: none;
+
+}
+.welcome-container .tab label{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.welcome-container .tab label::after{
+  content: '+';
+  position: absolute;
+  right: 20px;
+  font-size: 2em;
+  color: rgba(0,0,0,0.1);
+  transition: transform 1s;
+}
+.welcome-container .tab:hover label::after{
+  color: #333;
+}
+.welcome-container .tab input:checked ~ label::after{
+  transform: rotate(135deg);
+  color: #fff;
+}
+
+.welcome-container .tab:nth-child(2) label h2 {
+  background: linear-gradient(135deg, #4A148C, #6A1B9A, #7B1FA2);
+}
+
+.welcome-container .tab:nth-child(3) label h2 {
+  background: linear-gradient(135deg, #E65100, #EF6C00, #F57C00);
+}
+
+.welcome-container .tab:nth-child(4) label h2 {
+  background: linear-gradient(135deg, #BF360C, #D84315, #E64A19);
+}
+
+.welcome-container .tab:nth-child(5) label h2 {
+  background: linear-gradient(135deg, #004D40, #00695C, #00796B);
+}
+
+.welcome-container .tab:nth-child(6) label h2 {
+  background: linear-gradient(135deg, #0D47A1, #1565C0, #1976D2);
+}
+
+.welcome-container .tab:nth-child(7) label h2 {
+  background: linear-gradient(135deg, #4A148C, #9C27B0, #AB47BC);
+}
+
+.welcome-container .tab:nth-child(8) label h2 {
+  background: linear-gradient(135deg, #006064, #00838F, #0097A7);
+}
+
+.welcome-container .tab:nth-child(9) label h2 {
+  background: linear-gradient(135deg, #1A237E, #283593, #303F9F);
+}
+
+.welcome-container .tab:nth-child(10) label h2 {
+  background: linear-gradient(135deg, #880E4F, #AD1457, #C2185B);
+}
+
+.welcome-container .tab:nth-child(11) label h2 {
+  background: linear-gradient(135deg, #B71C1C, #D32F2F, #F44336);
+}
+
+.welcome-container .tab:nth-child(12) label h2 {
+  background: linear-gradient(135deg, #F57F17, #FFA000, #FFB300);
+}
+
+.welcome-container .tab:nth-child(13) label h2 {
+  background: linear-gradient(135deg, #BF360C, #D84315, #E64A19);
+}
+
+.welcome-container .tab:nth-child(14) label h2 {
+  background: linear-gradient(135deg, #E65100, #EF6C00, #F57C00);
+}
+
+.welcome-container .tab:nth-child(15) label h2 {
+  background: linear-gradient(135deg, #1B5E20, #388E3C, #43A047);
+}
+
+.welcome-container .tab:nth-child(16) label h2 {
+  background: linear-gradient(135deg, #0D47A1, #1976D2, #1E88E5);
+}
+
+.welcome-container .tab:nth-child(17) label h2 {
+  background: linear-gradient(135deg, #006064, #0097A7, #00ACC1);
+}
+
+
+
+.welcome-container .tab input:checked ~ label h2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 8em;
+  justify-content: flex-end;
+  padding: 20px;
+}
+.welcome-container .tab input:checked ~ label h3{
+  background: #fff;
+  padding: 2px 10px;
+  color: #333;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.welcome-container .tab label h2{
+  width: 40px;
+  height: 40px;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.25em;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.welcome-container .tab label h3{
+  position: relative;
+  font-weight: 500;
+  color: #333;
+  z-index: 10;
+}
+.welcome-container .tab .contant{
+  max-height: 0;
+  transition: 1s;
+  overflow: hidden;
+}
+.welcome-container .tab input:checked ~ .contant{
+  max-height: 100vh;
+}
+.welcome-container .tab .contant p{
+  position: relative;
+  padding: 10px 0;
+  color: #333;
+  z-index: 10;
+}
+.welcome-container .tab input:checked ~ .contant p{
+  color: #fff;
+}
+#welcome-message {
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent white background */
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-right: 2px solid rgba(255, 255, 255, .2);
+  border-bottom: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 50px 0px 0px 50px; /* Rounded corners */
+  padding: 20px; /* Add padding for spacing */
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  /* width: 400px; */
+  display: none;
+  backdrop-filter: blur(10px); /* Apply blur effect to the background */
+  z-index: 99999;
+  margin: 0;
+  height: 80%;
+  overflow: scroll;
+  display: flex;
+}
+#welcome-message p{
+  margin-bottom: 28px;
+  text-align: left;
+}
+#welcome-message button{
+  width: auto;
+  margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+  #welcome-message {
+      width: 90%;
+  }
+}
+
+
 
 /* ===============================
           Back To Top
@@ -91,6 +327,9 @@ body{
   transition: all 0.5s;
 }
 
+.splash p{
+  margin-top: 30px;
+}
 .bottom-right{
   position: absolute;
   bottom: 8px;
@@ -353,74 +592,7 @@ body{
 .button:active {
   transform: scale(0.96);
 }
-.button:before,
-.button:after {
-  position: absolute;
-  content: "";
-  width: 150%;
-  left: 50%;
-  height: 100%;
-  transform: translateX(-50%);
-  z-index: -1000;
-  background-repeat: no-repeat;
-}
-.button.animate::before {
-  top: -70%;
-  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-    radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
-    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
-    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
-  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
-    10% 10%, 18% 18%;
-  animation: greentopBubbles ease-in-out 0.6s forwards infinite;
-}
-@keyframes greentopBubbles {
-  0% {
-    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
-      40% 90%, 55% 90%, 70% 90%;
-  }
-  50% {
-    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
-      50% 50%, 65% 20%, 90% 30%;
-  }
-  100% {
-    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
-      50% 40%, 65% 10%, 90% 20%;
-    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-  }
-}
-.button.animate::after {
-  bottom: -70%;
-  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
-    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
-  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
-  animation: greenbottomBubbles ease-in-out 0.6s forwards infinite;
-}
-@keyframes greenbottomBubbles {
-  0% {
-    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
-      70% -10%, 70% 0%;
-  }
-  50% {
-    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
-      105% 0%;
-  }
-  100% {
-    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
-      110% 10%;
-    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-  }
-}
+
 
 /* ===============================
         About Section
@@ -895,4 +1067,47 @@ p a:hover {
 
 
 
+/* 
+.popup{
+  height: 100vh;
+  width: 100%;
+} */
+/* Add your main website styling here */
+
+/* Popup styling */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 300px;
+  text-align: center;
+}
+
+.popup h2 {
+  margin-top: 0;
+}
+
+.stars {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
 

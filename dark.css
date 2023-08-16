@@ -124,3 +124,25 @@
     transition: all 1s ease-in-out;
     width: 20rem;
   }
+  /* .dark-mode #welcome-message p{
+    color: white;
+  } */
+  .dark-mode .splash p{
+    color: #8e8e8e;
+  }
+  .dark-mode .welcome-container h1{
+    color: white;
+  }
+  .dark-mode .welcome-container .tab label h3{
+    color: white;
+  }
+  .dark-mode .welcome-container .tab {
+    background: #333;
+  }
+  .dark-mode .welcome-container .tab label::after{
+    color: white;
+  }
+
+  .dark-mode .welcome-container .tab:nth-child(5) label h2{
+    background: linear-gradient(135deg,#1A73E8  ,#20B53E , #FFB74D);
+  }
