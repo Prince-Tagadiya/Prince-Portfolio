@@ -1,3 +1,4 @@
+
 // ===============================
 //        Welcome Message 
 // ===============================
@@ -11,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Hide welcome message and allow scrolling
     welcomeMessage.style.display = "none";
     document.documentElement.classList.remove("freeze-scroll");
-    document.body.classList.remove("freeze-scroll");
   });
 
   // Display welcome message immediately
@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
     welcomeMessage.style.display = "block";
     // Freeze scrolling while message is shown
     document.documentElement.classList.add("freeze-scroll");
-    document.body.classList.add("freeze-scroll");
   }
 
   showWelcomeMessage();
@@ -205,3 +204,23 @@ function updateDeviceColorScheme() {
 window.addEventListener('DOMContentLoaded', updateDeviceColorScheme);
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateDeviceColorScheme);
 
+
+ 
+
+$(document).ready(function() {
+  $(`.skill-per`).each(function() {
+    var $this = $(this);
+    var percentage = $this.attr('percentage');
+    $this.css("width", percentage + "%");
+    $({
+      animatedValue: 0
+    }).animate({
+      animatedValue: percentage
+    }, {
+      duration: 1300,
+      step: function() {
+        $this.attr("percentage", Math.floor(this.animatedValue));
+      }
+    });
+  });
+});

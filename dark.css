@@ -57,18 +57,18 @@
   .dark-mode .contact__info p{
     color: #8e8e8e;
   }
-  .dark-mode .skills p{
+  .dark-mode .skill p{
     color: white;
     border-right: 2px solid white;
   }
   @media (max-width: 962px){
-    .dark-mode .skills p{
+    .dark-mode .skill p{
         color: white;
         border-right: none;
         border-bottom: 2px solid white;
       }
   }
-  .dark-mode .skills ul li{
+  .dark-mode .skill ul li{
     background-color: #1F1F1F;
   } 
   .dark-mode .about{
@@ -83,14 +83,8 @@
   .dark-mode .work-emoji{
     background-blend-mode: multiply;
   }
-  .dark-mode .project{
-    background-color: #2A2A2A;
-  }
-  .dark-mode .contact{
-    background-color: #1F1F1F;
-  }
   .dark-mode .projects-grid .pro{
-    background-color: #202020;
+    background-color: #292929;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
   }
   .dark-mode .fa-solid{
@@ -158,4 +152,31 @@
   }
   .dark-mode .section-about{
     background-color: #1F1F1F;
+  }
+
+  .dark-mode .section:nth-child(odd) {
+    background-color: #2A2A2A !important;
+  }
+  .dark-mode .section:nth-child(even) {
+    background-color: #1F1F1F !important;
+  }
+
+  .dark-mode .hero-text h1, .dark-mode h3, .dark-mode h4{
+    color: white;
+  }
+
+  .dark-mode .skill_bar_section .text-blk.skill-name{
+    color: white;
+  }
+
+  .dark-mode .skill_bar_section .skill-per::after{
+    color: white;
+  }
+
+  .dark-mode .skill_bar_section .skill-bar{
+    background-color: #1F1F1F;
+  }
+  
+  .dark-mode .more-skill{
+    color: white;
   }

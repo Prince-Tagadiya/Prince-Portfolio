@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
-    <link rel="apple-touch-icon" href="./porticon.png">
+    <!-- <link rel="apple-touch-icon" href="./porticon.png"> -->
     <link rel="stylesheet" href="assets/CSS/style.css">
     <link rel="stylesheet" href="assets/CSS/responsive.css">
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="dark.css">
     <title>Prince Portfolio</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body >
@@ -48,12 +49,14 @@
 
 <div class="sticky" id="myHeader">
     <header class="header" id="myheader">
+        <!-- left -->
         <a class="logo" href="index.html">Prince.dev</a>
-
+        <!-- right -->
         <nav class="navbar">
             <ul class="navbar_list">
                 <li><a class="navbar-link active1" href="#hero">Home</a></li>
                 <li><a class="navbar-link" href="#about">About</a></li>
+                <li><a class="navbar-link" href="#skills">Skills</a></li>
                 <li><a class="navbar-link" href="#projects">Projects</a></li>
                 <li><a class="navbar-link" href="#contact">Contact </a></li>
                 <li><i id="toggleDarkMode" class="fa-solid fa-sun dark-mode-toggle"></i></li>
@@ -246,11 +249,11 @@
         <button id="close-welcome" class="button">Start Exploring</button>
     </div>
 
-
+<div class="hulk">
 <!-- ===============================
             Hero Section
 =============================== -->
-<section class="section-hero" id="hero">
+<section class="section-hero section" id="hero">
         <div class="container">
             <div class="content">
                 <div class="hero-main">
@@ -265,7 +268,7 @@
                     </div>
                     <div class="hero-img"></div>
                 </div>
-                <div class="skills">
+                <div class="skill">
                     <p>Tech Stack</p>
                     <div class="logos">
                         <ul>
@@ -285,7 +288,7 @@
 <!-- ===============================
             About Section
 =============================== -->
-<section class="section-about" id="about">
+<section class="section-about section" id="about">
     <div class="container">
         <div class="about-content">
             <div class="img-side">
@@ -309,17 +312,125 @@
             Skills Section
 =============================== -->
 
-<!-- <section class="section-hero" id="skills">
-    <div class="hero">
-        <p>Skills section</p>
+<section class="section-skills section" id="skills">
+    <div class="container">
+        <div class="skills-content">
+        <div class="project-content">
+            <p>portfolio</p>
+            <h3>Unleash the Power of My Skill💡</h3>
+</div>
+        <div class="skill_bar_section">
+            <div class="responsive-container-block big-container">
+              <div class="responsive-container-block">
+                <div class="responsive-cell-block wk-mobile-12 wk-ipadp-9 wk-tab-10 wk-desk-6 left-one">
+                  <div class="skills">
+                    <div class="skills-name-box">
+                      <p class="text-blk skill-name">
+                        HTML
+                      </p>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-per" percentage="90">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skills">
+                    <div class="skills-name-box">
+                      <p class="text-blk skill-name">
+                        CSS
+                      </p>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-per two" percentage="80">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skills">
+                    <div class="skills-name-box">
+                      <p class="text-blk skill-name">
+                        Javascript
+                      </p>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-per three" percentage="20">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="skills">
+                    <div class="skills-name-box">
+                      <p class="text-blk skill-name">
+                        Figma
+                      </p>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-per four" percentage="20">
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+                <div class="responsive-cell-block wk-mobile-12 wk-tab-11 wk-desk-6 wk-ipadp-10">
+                  <div class="right-side">
+                    <div class="skills">
+                    <div class="skills-name-box">
+                      <p class="text-blk skill-name">
+                        Figma
+                      </p>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-per five" percentage="80">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skills">
+                    <div class="skills-name-box">
+                      <p class="text-blk skill-name">
+                        Photoshop
+                      </p>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-per six" percentage="90">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skills">
+                    <div class="skills-name-box">
+                      <p class="text-blk skill-name">
+                        illustrator
+                      </p>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-per seven" percentage="75">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- <div class="skills">
+                    <div class="skills-name-box">
+                      <p class="text-blk skill-name">
+                        Lorem ipsum dolor
+                      </p>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-per eight" percentage="20">
+                      </div>
+                    </div>
+                  </div> -->
+                <a href="#" class="more-skill">3+More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
-</section> -->
+</section>
 
 <!-- ===============================
             Projects Section 
 =============================== --> 
 
-<section class="section-project" id="projects">
+
+<section class="section-project section" id="projects">
     <div class="hero">
         <section id="projects" class="project">
             <div class="container">
@@ -332,6 +443,7 @@
                             <div class="pro__img">
                                 <a target="_blank" href="https://64a8f230bcf4a147e2b0bec4--lucent-fudge-1c6c80.netlify.app/" rel="noreferrer">
                                     <img src="assets/img/Project-1.png" alt="website"></a>
+                                    
                          </div>
                             <div class="pro__text">
                                 <h3>Car Rental 🚗</h3>
@@ -409,7 +521,7 @@
 <!-- ===============================
             Contact Section
 =============================== -->
-<section class="section-contact" id="contact">
+<section class="section-contact section" id="contact">
     <div class="hero">
     <div class="contact">
         <!-- <section id="contact" class="contact"> -->
@@ -460,7 +572,7 @@
         </ul>
     </div>
 </footer>
-
+</div>
 <script src="assets/js/index.js"></script>
 </body>
 </html>

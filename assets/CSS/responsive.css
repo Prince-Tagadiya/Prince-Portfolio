@@ -99,11 +99,11 @@
         margin-bottom: 40px;
         margin-top: -20px;
     }
-    .skills {
+    .skill {
         flex-direction: column;
         position: static;
     }
-    .skills p {
+    .skill p {
         border-bottom: 2px solid rgba(45,46,50,.5);
         border-right: none;
         margin-bottom: 3rem;
@@ -111,10 +111,10 @@
         padding-bottom: 1rem;
         padding-right: 0;
     }
-    .skills ul {
+    .skill ul {
         justify-content: center;
     }
-    .skills ul li {
+    .skill ul li {
         align-items: center;
         background-color: #fff;
         border-radius: 50%;
