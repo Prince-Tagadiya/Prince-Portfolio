@@ -180,3 +180,20 @@
   .dark-mode .more-skill{
     color: white;
   }
+
+  .dark-mode .skill-section{
+    background-color: #2A2A2A;
+  }
+
+  .dark-mode .circular_progress .card .circle-chart__percent{
+    fill: white;
+  }
+  .dark-mode .software-section{
+    background-color: #1F1F1F;
+  }
+  .dark-mode .circle-chart__background{
+    stroke: #1F1F1F;
+  }
+  .dark-mode .circular_progress .text-blk.card-head{
+    color: white;
+  }
