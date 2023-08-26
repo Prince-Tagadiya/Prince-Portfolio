@@ -2,6 +2,7 @@
     position: relative;
     min-height: 100vh;
     background-color: #F0F0F0;
+    border-radius: 0px 0px 101px 101px;
 }
 
 .skill-section h3{
@@ -91,10 +92,14 @@
     margin-right: 0px;
     margin-bottom: 10px;
     margin-left: 23px;
+    color: #2C2D2F;
+    text-align: center;
+    font-family: Rounded Mplus 1c;
     font-size: 24px;
-    line-height: 30px;
-    font-weight: 700;
-    color: #000;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.6px;
   }
   
   .circular_progress .text-blk.card-text {
@@ -437,10 +442,12 @@ body {
 .software-section{
     background-color: white;
     padding: 1px 0;
+    margin-top: -97px;
 }
 
 .navbar-link.active {
     color: #1C7FE7 !important;
     font-weight: bold;
   }
+  
   
