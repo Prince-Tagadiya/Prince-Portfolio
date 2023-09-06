@@ -269,6 +269,46 @@ body{
   fill: white;
   cursor: pointer;
 }
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown button */
+#darkModeDropdown {
+  cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--secondary-color);
+  min-width: 120px;
+  z-index: 1;
+}
+
+/* Dropdown content links */
+.dropdown-content a {
+  color: var(--font-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dropdown content links on hover */
+.dropdown-content a:hover {
+  background-color: #137efb;
+  color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
 
 /* ===============================
         Welcome Message

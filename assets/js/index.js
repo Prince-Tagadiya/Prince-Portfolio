@@ -204,23 +204,47 @@ function updateDeviceColorScheme() {
 window.addEventListener('DOMContentLoaded', updateDeviceColorScheme);
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateDeviceColorScheme);
 
+// ===============================
+//           Skills
+// ===============================
+// $(document).ready(function() {
+//   $(`.skill-per`).each(function() {
+//     var $this = $(this);
+//     var percentage = $this.attr('percentage');
+//     $this.css("width", percentage + "%");
+//     $({
+//       animatedValue: 0
+//     }).animate({
+//       animatedValue: percentage
+//     }, {
+//       duration: 1300,
+//       step: function() {
+//         $this.attr("percentage", Math.floor(this.animatedValue));
+//       }
+//     });
+//   });
+// });
 
- 
+// Function to animate skill bars
+function animateSkills() {
+  const skillBars = document.querySelectorAll('.skill-bar .skill-per');
 
-$(document).ready(function() {
-  $(`.skill-per`).each(function() {
-    var $this = $(this);
-    var percentage = $this.attr('percentage');
-    $this.css("width", percentage + "%");
-    $({
-      animatedValue: 0
-    }).animate({
-      animatedValue: percentage
-    }, {
-      duration: 1300,
-      step: function() {
-        $this.attr("percentage", Math.floor(this.animatedValue));
-      }
-    });
+  skillBars.forEach(skillBar => {
+    const percentage = skillBar.getAttribute('percentage');
+    skillBar.style.width = percentage + '%';
+  });
+}
+
+// Intersection Observer to trigger animation
+const skillsSection = document.querySelector('#skills');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateSkills();
+      observer.unobserve(entry.target); // Stop observing once animated
+    }
   });
 });
+
+observer.observe(skillsSection);

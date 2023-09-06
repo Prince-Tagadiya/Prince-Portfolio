@@ -275,6 +275,7 @@
 @media (max-width: 900px) {
     .footer-text {
       padding: 0 36px;
+      position: inherit;
     }
     .social_list {
       padding-right: 36px;
