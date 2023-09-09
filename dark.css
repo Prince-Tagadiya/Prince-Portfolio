@@ -154,10 +154,10 @@
     background-color: #1F1F1F;
   }
 
-  .dark-mode .section:nth-child(odd) {
+  .dark-mode .section:nth-child(even) {
     background-color: #2A2A2A !important;
   }
-  .dark-mode .section:nth-child(even) {
+  .dark-mode .section:nth-child(odd) {
     background-color: #1F1F1F !important;
   }
 

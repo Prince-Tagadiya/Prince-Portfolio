@@ -539,11 +539,11 @@ html.freeze-scroll, body.freeze-scroll {
 /* ===============================
             Section
 =============================== */
-.section:nth-child(odd) {
+.section:nth-child(even) {
   background-color: #eee !important;
 }
 
-.section:nth-child(even) {
+.section:nth-child(odd) {
   background-color: #fff !important;
 }
 
