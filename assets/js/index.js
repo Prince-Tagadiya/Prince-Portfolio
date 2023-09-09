@@ -2,27 +2,27 @@
 // ===============================
 //        Welcome Message 
 // ===============================
-document.addEventListener("DOMContentLoaded", function() {
-  // Get the elements
-  const welcomeMessage = document.getElementById("welcome-message");
-  const closeButton = document.getElementById("close-welcome");
+// document.addEventListener("DOMContentLoaded", function() {
+//   // Get the elements
+//   const welcomeMessage = document.getElementById("welcome-message");
+//   const closeButton = document.getElementById("close-welcome");
 
-  // Close button event listener
-  closeButton.addEventListener("click", function() {
-    // Hide welcome message and allow scrolling
-    welcomeMessage.style.display = "none";
-    document.documentElement.classList.remove("freeze-scroll");
-  });
+//   // Close button event listener
+//   closeButton.addEventListener("click", function() {
+//     // Hide welcome message and allow scrolling
+//     welcomeMessage.style.display = "none";
+//     document.documentElement.classList.remove("freeze-scroll");
+//   });
 
-  // Display welcome message immediately
-  function showWelcomeMessage() {
-    welcomeMessage.style.display = "block";
-    // Freeze scrolling while message is shown
-    document.documentElement.classList.add("freeze-scroll");
-  }
+//   // Display welcome message immediately
+//   function showWelcomeMessage() {
+//     welcomeMessage.style.display = "block";
+//     // Freeze scrolling while message is shown
+//     document.documentElement.classList.add("freeze-scroll");
+//   }
 
-  showWelcomeMessage();
-});
+//   showWelcomeMessage();
+// });
 
 // ===============================
 //        Animated Tech Stack 
