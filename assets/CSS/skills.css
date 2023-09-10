@@ -450,4 +450,7 @@ body {
     font-weight: bold;
   }
   
-  
+  .card{
+    background-color: hsl(0, 0%, 100%, 0.0)!important;
+    border-color: hsl(0, 0%, 100%, 0.0)!important;
+  }

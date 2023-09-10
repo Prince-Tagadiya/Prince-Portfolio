@@ -105,5 +105,3 @@ function updateActiveNavItem() {
 // Call the function when the page loads and whenever the user scrolls
 document.addEventListener('DOMContentLoaded', updateActiveNavItem);
 window.addEventListener('scroll', updateActiveNavItem);
-
-
