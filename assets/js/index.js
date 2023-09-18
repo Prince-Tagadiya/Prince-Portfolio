@@ -1,29 +1,25 @@
+  const loadmore = document.querySelector('.load-more');
 
-// ===============================
-//        Welcome Message 
-// ===============================
-// document.addEventListener("DOMContentLoaded", function() {
-//   // Get the elements
-//   const welcomeMessage = document.getElementById("welcome-message");
-//   const closeButton = document.getElementById("close-welcome");
+  let currentItems = 3;
+  loadmore.addEventListener('click', (e) =>{
+  const elementList = [...document.querySelectorAll('.post li')];
+  e.target.classList.add('show-loader');
 
-//   // Close button event listener
-//   closeButton.addEventListener("click", function() {
-//     // Hide welcome message and allow scrolling
-//     welcomeMessage.style.display = "none";
-//     document.documentElement.classList.remove("freeze-scroll");
-//   });
+  for (let i = currentItems; i < currentItems + 3; i++){
+    setTimeout( function() {
+      e.target.classList.remove('show-loader');
+      if (elementList[i]){
+        elementList[i].style.display = 'flex';
+      }
+    }, 3000)
+  }
+  currentItems += 3;
 
-//   // Display welcome message immediately
-//   function showWelcomeMessage() {
-//     welcomeMessage.style.display = "block";
-//     // Freeze scrolling while message is shown
-//     document.documentElement.classList.add("freeze-scroll");
-//   }
-
-//   showWelcomeMessage();
-// });
-
+  //hide loader button after fully load
+  if (currentItems >= elementList.length){
+    event.target.classList.add('loaded')
+  }
+})
 // ===============================
 //        Animated Tech Stack 
 // ===============================

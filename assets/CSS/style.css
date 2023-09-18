@@ -697,6 +697,114 @@ body{
   flex-direction: row-reverse!important;
 }
 
+.load-more{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  width: 180px;
+  height: 52px;
+  text-transform: uppercase;
+  background-color: var(--font-color);
+  color: white;
+  margin: 0 auto;
+  border-radius: 30px;
+  transition: all .3s ease-out;
+  /* text-decoration: none; */
+}
+.load-more:hover{
+  background-color: rgba(28, 29, 32, 0.53);
+  color: inherit;
+}
+
+.post li:nth-child(3) ~ li {
+  display: none;
+}
+
+/* loader */
+.loading {
+  display: none;
+  height: 32px;
+  width: 32px;
+  margin: 0 auto;
+  animation: loading1 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.loading div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.loading div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loading div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes loading1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.loading div{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  clip: rect(16px, 32px, 32px, 0);
+}
+
+.loading::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  animation: loading1 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.loading::after{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-top: 3px solid rgb(105, 105, 255);
+  border-radius: 50%;
+  animation: loading1 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.load-more.show-loader{
+  width: 52px;
+  background-color: white;
+  text-indent: -9999px;
+}
+.load-more.show-loader .loading{
+  display: block;
+}
+.load-more.loaded{
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  transition: visibility .3s 3s, opacity .3s 3s, height .3s 3s,;
+}
 /* ===============================
         Contact Section
 =============================== */
