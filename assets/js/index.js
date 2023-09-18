@@ -49,6 +49,26 @@ logoItems.forEach((item, index) => {
 // ===============================
 //         Back To Top
 // ===============================
+// function calcScrollValue() {
+//   const scrollProgress = document.getElementById("progress");
+//   const pos = document.documentElement.scrollTop;
+//   const calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+//   const scrollValue = Math.round((pos * 100) / calcHeight);
+
+//   // Show/hide scroll-to-top button
+//   scrollProgress.style.display = (pos > 100) ? "grid" : "none";
+  
+//   // Scroll to top on button click
+//   scrollProgress.addEventListener("click", () => {
+//     document.documentElement.scrollTop = 0;
+//   });
+  
+//   // Update progress bar gradient
+//   scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+// }
+
+window.addEventListener('scroll', calcScrollValue);
+window.addEventListener('load', calcScrollValue);
 function calcScrollValue() {
   const scrollProgress = document.getElementById("progress");
   const pos = document.documentElement.scrollTop;
@@ -56,13 +76,19 @@ function calcScrollValue() {
   const scrollValue = Math.round((pos * 100) / calcHeight);
 
   // Show/hide scroll-to-top button
-  scrollProgress.style.display = (pos > 100) ? "grid" : "none";
-  
+  scrollProgress.style.display = pos > 100 ? "flex" : "none";
+
+  // Check if we're at the bottom of the page
+  const isAtBottom = pos >= calcHeight;
+
+  // Update the bottom value of #progress based on whether we're at the bottom
+  scrollProgress.style.bottom = isAtBottom ? "90px" : "20px";
+
   // Scroll to top on button click
   scrollProgress.addEventListener("click", () => {
     document.documentElement.scrollTop = 0;
   });
-  
+
   // Update progress bar gradient
   scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
 }

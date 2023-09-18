@@ -454,3 +454,521 @@ body {
     background-color: hsl(0, 0%, 100%, 0.0)!important;
     border-color: hsl(0, 0%, 100%, 0.0)!important;
   }
+
+  :root {
+    --text: #2B3044;
+    --line: #BBC1E1;
+    --line-active: #275EFE;
+  }
+  
+  p {
+    font-size: 18px;
+    margin: 0;
+    color: var(--text);
+  }
+  p a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    margin: 0 var(--spacing, 0px);
+    transition: margin 0.25s;
+  }
+  p a svg {
+    width: 76px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 7px) translateZ(0);
+    fill: none;
+    stroke: var(--stroke, var(--line));
+    stroke-linecap: round;
+    stroke-width: 2px;
+    stroke-dasharray: var(--offset, 69px) 278px;
+    stroke-dashoffset: 361px;
+    transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+  }
+  p a:hover {
+    --spacing: 4px;
+    --stroke: var(--line-active);
+    --stroke-delay: .1s;
+    --offset: 180px;
+  }
+   
+  .Live_demo p a svg {
+    width: 207px;
+    height: 63px;
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    transform: translate(-50%, 7px) translateZ(0);
+    fill: none;
+    stroke: var(--stroke, var(--line));
+    stroke-linecap: round;
+    stroke-width: 1.2px;
+    stroke-dasharray: var(--offset, 69px) 278px;
+    stroke-dashoffset: 361px;
+    transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+  }
+  
+  
+  
+  
+  
+  
+  .skill_bar_section * {
+    font-family: Nunito, sans-serif;
+  }
+  
+  .skill_bar_section .text-blk {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    /* line-height: 25px; */
+    font-size: 16px;
+  }
+  
+  .skill_bar_section .responsive-container-block {
+    min-height: 75px;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    justify-content: flex-start;
+  }
+  
+  .skill_bar_section .responsive-cell-block {
+    min-height: 75px;
+    width: 422px;
+    margin-left: 0;
+  }
+  
+  .skill_bar_section .responsive-container-block{
+    /* margin-top: 50px; */
+    margin-right: auto;
+    /* margin-bottom: 50px; */
+    margin-left: auto;
+    justify-content: center;
+    max-width: 1320px;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+  
+  .skill_bar_section .responsive-container-block.big-container {
+    padding-top: 0px;
+    /* padding-right: 50px; */
+    padding-bottom: 0px;
+    /* padding-left: 50px; */
+  }
+  
+  .skill_bar_section .text-blk.section-head {
+    font-size: 36px;
+    line-height: 45px;
+    font-weight: 700;
+    max-width: 580px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 55px;
+    margin-left: 0px;
+  }
+  
+  .skill_bar_section .text-blk.skill-name {
+    font-size: 12px;
+    /* line-height: 27px; */
+    font-weight: 600;
+  }
+  
+  .skill_bar_section .skill-bar {
+    height: 6px;
+    background-color: #ffffff;
+  }
+  
+  .skill_bar_section .skills {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 70px;
+    margin-left: 0px;
+    position: relative;
+    max-width: 422px;
+  }
+  
+  .skill_bar_section .skill-per {
+    height: 6px;
+    background-color: #FF6D00;
+    width: 0px;
+    transition-duration: 1.3s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+    transition-property: all;
+  }
+  
+  .skill_bar_section .skills-name-box {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 24px;
+    margin-left: 0px;
+  }
+  
+  .skill_bar_section .skill-per::after {
+    position: absolute;
+    content: attr(percentage) "%";
+    top: 0px;
+    right: 0px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  .skill_bar_section .skill-per.two {
+    background-color: #039BE5;
+  }
+  
+  .skill_bar_section .skill-per.three {
+    background-color: #FFD600;
+  }
+  
+  /* .skill_bar_section .skill-per.four {
+    background-color: #0DCF83;
+  } */
+  
+  .skill_bar_section .skill-per.five {
+    background-color: #0DCF83;
+  }
+  
+  .skill_bar_section .skill-per.six {
+    background-color: #2FA3F6;
+  }
+  
+  .skill_bar_section .skill-per.seven {
+    background-color: #F69501;
+  }
+  
+  /* .skill_bar_section .skill-per.eight {
+    background-color: #fed066;
+  } */
+  
+  .skill_bar_section .circle {
+    max-width: 536px;
+    max-height: 536px;
+    width: 100%;
+    height: 100%;
+    background-color: #fed066;
+    border-top-left-radius: 270px;
+    border-top-right-radius: 270px;
+    border-bottom-right-radius: 270px;
+    border-bottom-left-radius: 270px;
+    position: absolute;
+    left: 25%;
+    bottom: -10%;
+  }
+  
+  .skill_bar_section .img {
+    width: 130%;
+    position: relative;
+    right: -30%;
+    box-shadow: rgba(0, 0, 0, 0.1) 6px 12px 24px;
+  }
+  
+  .skill_bar_section .right-side {
+  max-width: 422px;
+  margin-left: auto;
+  margin-top: 24px;
+  }
+  
+  .skill_bar_section .responsive-container-block.big-container {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .more-skill{
+    text-decoration: none;
+    text-align: right;
+    color: #2C2D2F;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    display: block; 
+    text-align: right;
+    text-decoration: underline;
+    font-size: 12px;
+  }
+  .skills-content{
+    padding: 74px 0;
+  }
+  .skill-bar, .skill-per{
+    height: 4px !important;
+  }
+  /* @media (max-width: 955px) {
+    .skill_bar_section .img {
+      right: 0px;
+      left: 0px;
+      width: 100%;
+    }
+  
+    .skill_bar_section .circle {
+      left: -10%;
+      bottom: -15%;
+      right: 0px;
+    }
+  
+    .skill_bar_section .responsive-cell-block.wk-mobile-12.wk-ipadp-9.wk-tab-10.wk-desk-6.left-one {
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 60px;
+    }
+  
+    .responsive-container-block {
+      justify-content: center;
+    }
+  
+    .responsive-cell-block {
+      margin: 0 auto;
+    }
+  
+    .right-side {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .skill_bar_section .responsive-cell-block.wk-mobile-12.wk-ipadp-9.wk-tab-10.wk-desk-6.left-one {
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 40px;
+      margin-left: 0px;
+    }
+  
+    .skill_bar_section .responsive-cell-block.wk-mobile-12.wk-tab-11.wk-desk-6.wk-ipadp-10 {
+      min-height: 450px;
+    }
+  
+    .skill_bar_section .text-blk.skill-name {
+      font-size: 18px;
+    }
+  
+    .skill_bar_section .text-blk.section-head {
+      font-size: 30px;
+      line-height: 40px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 40px;
+      margin-left: 0px;
+    }
+  } */
+  .left-one{
+    margin: auto;
+  }
+  @media (max-width: 955px) {
+    .skill_bar_section .responsive-cell-block{
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap');
+  
+  
+  
+  .wk-desk-1 {
+    width: 8.333333%;
+  }
+  
+  .wk-desk-2 {
+    width: 16.666667%;
+  }
+  
+  .wk-desk-3 {
+    width: 25%;
+  }
+  
+  .wk-desk-4 {
+    width: 33.333333%;
+  }
+  
+  .wk-desk-5 {
+    width: 41.666667%;
+  }
+  
+  /* .wk-desk-6 {
+    width: 50%;
+  } */
+  
+  .wk-desk-7 {
+    width: 58.333333%;
+  }
+  
+  .wk-desk-8 {
+    width: 66.666667%;
+  }
+  
+  .wk-desk-9 {
+    width: 75%;
+  }
+  
+  .wk-desk-10 {
+    width: 83.333333%;
+  }
+  
+  .wk-desk-11 {
+    width: 91.666667%;
+  }
+  
+  .wk-desk-12 {
+    width: 100%;
+  }
+  
+  @media (max-width: 955px) {
+    .wk-ipadp-1 {
+      width: 8.333333%;
+    }
+  
+    .wk-ipadp-2 {
+      width: 16.666667%;
+    }
+  
+    .wk-ipadp-3 {
+      width: 25%;
+    }
+  
+    .wk-ipadp-4 {
+      width: 33.333333%;
+    }
+  
+    .wk-ipadp-5 {
+      width: 41.666667%;
+    }
+  
+    .wk-ipadp-6 {
+      width: 50%;
+    }
+  
+    .wk-ipadp-7 {
+      width: 58.333333%;
+    }
+  
+    .wk-ipadp-8 {
+      width: 66.666667%;
+    }
+  
+    /* .wk-ipadp-9 {
+      width: 75%;
+    } */
+  
+    .wk-ipadp-10 {
+      width: 83.333333%;
+    }
+  
+    .wk-ipadp-11 {
+      width: 91.666667%;
+    }
+  
+    .wk-ipadp-12 {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 955px) {
+    .wk-tab-1 {
+      width: 8.333333%;
+    }
+  
+    .wk-tab-2 {
+      width: 16.666667%;
+    }
+  
+    .wk-tab-3 {
+      width: 25%;
+    }
+  
+    .wk-tab-4 {
+      width: 33.333333%;
+    }
+  
+    .wk-tab-5 {
+      width: 41.666667%;
+    }
+  
+    .wk-tab-6 {
+      width: 50%;
+    }
+  
+    .wk-tab-7 {
+      width: 58.333333%;
+    }
+  
+    .wk-tab-8 {
+      width: 66.666667%;
+    }
+  
+    .wk-tab-9 {
+      width: 75%;
+    }
+  
+    /* .wk-tab-10 {
+      width: 83.333333%;
+    } */
+  
+    .wk-tab-11 {
+      width: 91.666667%;
+    }
+  
+    .wk-tab-12 {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 955px) {
+    .wk-mobile-1 {
+      width: 8.333333%;
+    }
+  
+    .wk-mobile-2 {
+      width: 16.666667%;
+    }
+  
+    .wk-mobile-3 {
+      width: 25%;
+    }
+  
+    .wk-mobile-4 {
+      width: 33.333333%;
+    }
+  
+    .wk-mobile-5 {
+      width: 41.666667%;
+    }
+  
+    .wk-mobile-6 {
+      width: 50%;
+    }
+  
+    .wk-mobile-7 {
+      width: 58.333333%;
+    }
+  
+    .wk-mobile-8 {
+      width: 66.666667%;
+    }
+  
+    .wk-mobile-9 {
+      width: 75%;
+    }
+  
+    .wk-mobile-10 {
+      width: 83.333333%;
+    }
+  
+    .wk-mobile-11 {
+      width: 91.666667%;
+    }
+  
+    /* .wk-mobile-12 {
+      width: 100%;
+    } */
+  }
+  
