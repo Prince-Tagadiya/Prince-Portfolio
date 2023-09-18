@@ -710,7 +710,7 @@ body{
   margin: 0 auto;
   border-radius: 30px;
   transition: all .3s ease-out;
-  /* text-decoration: none; */
+  text-decoration: none;
 }
 .load-more:hover{
   background-color: rgba(28, 29, 32, 0.53);
@@ -804,6 +804,10 @@ body{
   opacity: 0;
   height: 0;
   transition: visibility .3s 3s, opacity .3s 3s, height .3s 3s,;
+}
+
+.post ul li{
+  margin-top: 50px;
 }
 /* ===============================
         Contact Section
