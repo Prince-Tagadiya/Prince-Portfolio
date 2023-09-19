@@ -1,25 +1,28 @@
-  const loadmore = document.querySelector('.load-more');
+const loadmore = document.querySelector('.load-more');
 
-  let currentItems = 3;
-  loadmore.addEventListener('click', (e) =>{
-  const elementList = [...document.querySelectorAll('.post li')];
-  e.target.classList.add('show-loader');
+  let currentItems = 2;
+  loadmore.addEventListener('click', (e) => {
+    const elementList = [...document.querySelectorAll('.post li')];
+    e.target.classList.add('show-loader');
 
-  for (let i = currentItems; i < currentItems + 3; i++){
-    setTimeout( function() {
-      e.target.classList.remove('show-loader');
-      if (elementList[i]){
-        elementList[i].style.display = 'flex';
-      }
-    }, 3000)
-  }
-  currentItems += 3;
+    for (let i = currentItems; i < currentItems + 2; i++) {
+      setTimeout(function () {
+        if (elementList[i]) {
+          elementList[i].style.display = 'block';
+        }
 
-  //hide loader button after fully load
-  if (currentItems >= elementList.length){
-    event.target.classList.add('loaded')
-  }
-})
+        // Hide the loader and "Load More" button after fully loading all content
+        if (i === elementList.length - 1) {
+          e.target.style.display = 'none'; // Hide the "Load More" button
+        }
+
+        e.target.classList.remove('show-loader');
+      }, 3000);
+    }
+    currentItems += 2;
+  });
+
+  
 // ===============================
 //        Animated Tech Stack 
 // ===============================
@@ -45,26 +48,7 @@ logoItems.forEach((item, index) => {
 // ===============================
 //         Back To Top
 // ===============================
-// function calcScrollValue() {
-//   const scrollProgress = document.getElementById("progress");
-//   const pos = document.documentElement.scrollTop;
-//   const calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-//   const scrollValue = Math.round((pos * 100) / calcHeight);
-
-//   // Show/hide scroll-to-top button
-//   scrollProgress.style.display = (pos > 100) ? "grid" : "none";
-  
-//   // Scroll to top on button click
-//   scrollProgress.addEventListener("click", () => {
-//     document.documentElement.scrollTop = 0;
-//   });
-  
-//   // Update progress bar gradient
-//   scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
-// }
-
-window.addEventListener('scroll', calcScrollValue);
-window.addEventListener('load', calcScrollValue);
+// Define the calcScrollValue function
 function calcScrollValue() {
   const scrollProgress = document.getElementById("progress");
   const pos = document.documentElement.scrollTop;
@@ -80,29 +64,96 @@ function calcScrollValue() {
   // Update the bottom value of #progress based on whether we're at the bottom
   scrollProgress.style.bottom = isAtBottom ? "90px" : "20px";
 
-  // Scroll to top on button click
-  scrollProgress.addEventListener("click", () => {
-    document.documentElement.scrollTop = 0;
-  });
-
   // Update progress bar gradient
   scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
 }
 
+// Add an event listener to detect when the page is loaded or refreshed
+window.addEventListener('load', function () {
+  // Scroll to the top of the page
+  document.documentElement.scrollTop = 0;
+  
+  // Call the calcScrollValue function to update the scroll progress
+  calcScrollValue();
+});
+
+// Add an event listener to handle scroll events
 window.addEventListener('scroll', calcScrollValue);
-window.addEventListener('load', calcScrollValue);
 
 // ===============================
 //              Intro
 // ===============================
 const splash = document.querySelector('.splash');
 
+// Function to hide the splash screen and enable scrolling
+function hideSplashScreen() {
+  splash.classList.add('display-none');
+  // Remove the overflow-y style from the HTML element to enable scrolling
+  document.documentElement.style.overflowY = 'auto';
+}
+
+// Function to hide splash screen when any key is pressed
+function skipIntroOnKeyPress(event) {
+  hideSplashScreen();
+  // Remove the event listener after the splash screen is hidden
+  document.removeEventListener('keydown', skipIntroOnKeyPress);
+}
+
+// Function to hide splash screen when user clicks anywhere
+function skipIntroOnClick(event) {
+  hideSplashScreen();
+  // Remove the event listener after the splash screen is hidden
+  document.removeEventListener('click', skipIntroOnClick);
+}
+
 document.addEventListener('DOMContentLoaded', (e) => {
+  // Apply the overflow-y: hidden style to the HTML element to disable vertical scrolling
+  document.documentElement.style.overflowY = 'hidden';
+
   // Hide splash screen after a delay
-  setTimeout(() => {
-    splash.classList.add('display-none');
-  }, 6000);
+  setTimeout(hideSplashScreen, 6000);
+
+  // Add a keydown event listener to skip on any key press
+  document.addEventListener('keydown', skipIntroOnKeyPress);
+
+  // Add a click event listener to skip on any click
+  document.addEventListener('click', skipIntroOnClick);
 });
+
+
+// confetti
+
+const confettiContainer = document.querySelector('.confetti-container');
+
+let hideTimeout;
+
+// Function to hide the confetti container
+function hideConfettiContainer() {
+  confettiContainer.style.display = 'none';
+}
+
+// Function to reset the hide timeout
+function resetHideTimeout() {
+  clearTimeout(hideTimeout);
+  hideTimeout = setTimeout(() => {
+    hideConfettiContainer();
+  }, 2000); // 2 seconds delay
+}
+
+// Add event listeners for key press and mouse click anywhere on the page
+document.addEventListener('keydown', () => {
+  resetHideTimeout();
+});
+
+document.addEventListener('click', () => {
+  resetHideTimeout();
+});
+
+// Add a timeout to hide the confetti container after 8 seconds
+hideTimeout = setTimeout(() => {
+  hideConfettiContainer();
+}, 8000);
+
 
 // ===============================
 //         Responsive Header
@@ -229,24 +280,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', upd
 // ===============================
 //           Skills
 // ===============================
-// $(document).ready(function() {
-//   $(`.skill-per`).each(function() {
-//     var $this = $(this);
-//     var percentage = $this.attr('percentage');
-//     $this.css("width", percentage + "%");
-//     $({
-//       animatedValue: 0
-//     }).animate({
-//       animatedValue: percentage
-//     }, {
-//       duration: 1300,
-//       step: function() {
-//         $this.attr("percentage", Math.floor(this.animatedValue));
-//       }
-//     });
-//   });
-// });
-
 // Function to animate skill bars
 function animateSkills() {
   const skillBars = document.querySelectorAll('.skill-bar .skill-per');
@@ -270,3 +303,26 @@ const observer = new IntersectionObserver(entries => {
 });
 
 observer.observe(skillsSection);
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Get the video element
+  const video = document.querySelector('.pro__video-container video');
+  
+  // Get the poster image source
+  const posterImageSrc = video.getAttribute('poster');
+  
+  // Create an image element to load the poster image
+  const img = new Image();
+  img.src = posterImageSrc;
+  
+  // Calculate the dominant color from the poster image
+  img.onload = function () {
+      new Vibrant(img, 64).getPalette((err, palette) => {
+          if (!err) {
+              const vibrantColor = palette.Vibrant.getHex();
+              const proVideoContainer = document.querySelector('.pro__video-container');
+              proVideoContainer.style.backgroundColor = vibrantColor;
+          }
+      });
+  };
+});
