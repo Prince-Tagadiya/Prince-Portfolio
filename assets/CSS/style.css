@@ -662,20 +662,11 @@ body{
   gap: 10px;
   justify-content: space-evenly;
   margin-top: 30px;
-  margin: 43px auto -7px auto;
+  margin: 17px auto -7px auto;
 }
 
 .links a i {
   font-size: 20px;
-}
-
-.projects-grid .pro__text {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  justify-content: center;
-  text-align: center;
-  width: 300px;
 }
 
 .links a {
@@ -689,7 +680,7 @@ body{
 .projects-grid .pro__1 {
   flex-direction: row;
   gap: 80px;
-  height: 400px;
+  height: 340px;
   padding: 20px;
 }
 
@@ -716,16 +707,7 @@ body{
 }
 
 .projects-grid .pro__video {
-  background-color: hsla(0, 0%, 46%, 0.2);
-  border-radius: 17px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: auto;
-  overflow: hidden;
   width: 530px; /* Set the desired width for your video container */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 
 .projects-grid .pro__video::before {
@@ -742,6 +724,7 @@ body{
 .projects-grid .pro__video video {
   width: 100%; /* Make the video element take up the full width of its container */
   height: auto; /* Maintain aspect ratio based on the video's intrinsic size */
+  border-radius: 17px;
 }
 
 .load-more{
@@ -858,6 +841,7 @@ body{
 .post ul li{
   margin-top: 50px;
 }
+
 /* ===============================
         Contact Section
 =============================== */
