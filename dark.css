@@ -174,7 +174,7 @@
   }
 
   .dark-mode .skill_bar_section .skill-bar{
-    background-color: #1F1F1F;
+    background-color: #2A2A2A;
   }
   
   .dark-mode .more-skill{
@@ -199,4 +199,8 @@
   }
   .dark-mode .text-side h3{
 color: #147efb;
+  }
+
+  .dark-mode .project-content h4{
+    background-color: #1f1f1f;
   }
