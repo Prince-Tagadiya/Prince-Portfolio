@@ -352,11 +352,11 @@ function flashTitleNotification() {
   var isFlash = false;
 
   function changeTitle() {
-    document.title = isFlash ? "Portfolio" : originalTitle;
+    document.title = isFlash ? "Prince Portfolio" : originalTitle;
     isFlash = !isFlash;
   }
 
-  setInterval(changeTitle, 1000);
+  setInterval(changeTitle, 3000);
 }
 
 window.onload = flashTitleNotification;
