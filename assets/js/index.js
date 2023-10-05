@@ -345,3 +345,18 @@ document.onkeydown = (e) => {
   )
     return false;
 };
+
+// Title change
+function flashTitleNotification() {
+  var originalTitle = document.title;
+  var isFlash = false;
+
+  function changeTitle() {
+    document.title = isFlash ? "Portfolio" : originalTitle;
+    isFlash = !isFlash;
+  }
+
+  setInterval(changeTitle, 1000);
+}
+
+window.onload = flashTitleNotification;
