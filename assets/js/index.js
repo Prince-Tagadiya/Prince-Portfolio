@@ -1,28 +1,33 @@
+// ===============================
+//        Load-More
+// ===============================
 const loadmore = document.querySelector('.load-more');
 
-  let currentItems = 2;
-  loadmore.addEventListener('click', (e) => {
-    const elementList = [...document.querySelectorAll('.post li')];
-    e.target.classList.add('show-loader');
+let currentItems = 2;
+loadmore.addEventListener('click', (e) => {
+  const elementList = [...document.querySelectorAll('.post li')];
+  e.target.classList.add('show-loader');
 
-    for (let i = currentItems; i < currentItems + 2; i++) {
-      setTimeout(function () {
-        if (elementList[i]) {
-          elementList[i].style.display = 'block';
-        }
+  for (let i = currentItems; i < currentItems + 2; i++) {
+    setTimeout(function () {
+      if (elementList[i]) {
+        elementList[i].style.display = 'block';
 
-        // Hide the loader and "Load More" button after fully loading all content
-        if (i === elementList.length - 1) {
-          e.target.style.display = 'none'; // Hide the "Load More" button
-        }
+        // Trigger AOS initialization for the newly loaded item
+        AOS.refreshHard(); // This forces AOS to reinitialize and apply animations to all elements, including the new ones
+      }
 
-        e.target.classList.remove('show-loader');
-      }, 3000);
-    }
-    currentItems += 2;
-  });
+      // Hide the loader and "Load More" button after fully loading all content
+      if (i === elementList.length - 1) {
+        e.target.style.display = 'none'; // Hide the "Load More" button
+      }
 
-  
+      e.target.classList.remove('show-loader');
+    }, 3000); // Delay for simulating loading
+  }
+  currentItems += 2;
+});
+
 // ===============================
 //        Animated Tech Stack 
 // ===============================
@@ -290,6 +295,14 @@ function animateSkills() {
   });
 }
 
+// Function to reset skill bars to 0%
+function resetSkills() {
+  const skillBars = document.querySelectorAll('.skill-bar .skill-per');
+  skillBars.forEach(skillBar => {
+    skillBar.style.width = '0%';
+  });
+}
+
 // Intersection Observer to trigger animation
 const skillsSection = document.querySelector('#skills');
 
@@ -297,37 +310,17 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       animateSkills();
-      observer.unobserve(entry.target); // Stop observing once animated
+    } else {
+      resetSkills();
     }
   });
 });
 
 observer.observe(skillsSection);
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Get the video element
-  const video = document.querySelector('.pro__video-container video');
-  
-  // Get the poster image source
-  const posterImageSrc = video.getAttribute('poster');
-  
-  // Create an image element to load the poster image
-  const img = new Image();
-  img.src = posterImageSrc;
-  
-  // Calculate the dominant color from the poster image
-  img.onload = function () {
-      new Vibrant(img, 64).getPalette((err, palette) => {
-          if (!err) {
-              const vibrantColor = palette.Vibrant.getHex();
-              const proVideoContainer = document.querySelector('.pro__video-container');
-              proVideoContainer.style.backgroundColor = vibrantColor;
-          }
-      });
-  };
-});
-
-// Disable Right Click
+// ===============================
+//    Disable Right Click
+// ===============================
 document.addEventListener('contextmenu', (e) => e.preventDefault());
 
 function ctrlShiftKey(e, keyCode) {
@@ -346,7 +339,10 @@ document.onkeydown = (e) => {
     return false;
 };
 
-// Title change
+
+// ===============================
+//          Title Flash 
+// ===============================
 function flashTitleNotification() {
   var originalTitle = document.title;
   var isFlash = false;
@@ -360,3 +356,7 @@ function flashTitleNotification() {
 }
 
 window.onload = flashTitleNotification;
+
+
+
+
