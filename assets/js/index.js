@@ -29,7 +29,7 @@ loadmore.addEventListener('click', (e) => {
 });
 
 // ===============================
-//        Animated Tech Stack 
+//        Animated Tech Stack
 // ===============================
 const logoItems = document.querySelectorAll('.logos ul li');
 
@@ -37,14 +37,19 @@ const logoItems = document.querySelectorAll('.logos ul li');
 logoItems.forEach((item, index) => {
   item.addEventListener('mouseenter', () => {
     logoItems.forEach((li, i) => {
-      const translateYValue = (i === index) ? '-15px' : (i === index - 1 || i === index + 1) ? '-5px' : '0';
+      const translateYValue =
+        i === index
+          ? '-15px'
+          : i === index - 1 || i === index + 1
+          ? '-5px'
+          : '0';
       li.style.transform = `translateY(${translateYValue})`;
     });
   });
 
   // Reset animation on mouse leave
   item.addEventListener('mouseleave', () => {
-    logoItems.forEach(li => {
+    logoItems.forEach((li) => {
       li.style.transform = 'translateY(0)';
     });
   });
@@ -55,19 +60,21 @@ logoItems.forEach((item, index) => {
 // ===============================
 // Define the calcScrollValue function
 function calcScrollValue() {
-  const scrollProgress = document.getElementById("progress");
+  const scrollProgress = document.getElementById('progress');
   const pos = document.documentElement.scrollTop;
-  const calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const calcHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
   const scrollValue = Math.round((pos * 100) / calcHeight);
 
   // Show/hide scroll-to-top button
-  scrollProgress.style.display = pos > 100 ? "flex" : "none";
+  scrollProgress.style.display = pos > 100 ? 'flex' : 'none';
 
   // Check if we're at the bottom of the page
   const isAtBottom = pos >= calcHeight;
 
   // Update the bottom value of #progress based on whether we're at the bottom
-  scrollProgress.style.bottom = isAtBottom ? "90px" : "20px";
+  scrollProgress.style.bottom = isAtBottom ? '90px' : '20px';
 
   // Update progress bar gradient
   scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
@@ -77,7 +84,7 @@ function calcScrollValue() {
 window.addEventListener('load', function () {
   // Scroll to the top of the page
   document.documentElement.scrollTop = 0;
-  
+
   // Call the calcScrollValue function to update the scroll progress
   calcScrollValue();
 });
@@ -125,7 +132,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
   document.addEventListener('click', skipIntroOnClick);
 });
 
-
 // confetti
 
 const confettiContainer = document.querySelector('.confetti-container');
@@ -159,28 +165,27 @@ hideTimeout = setTimeout(() => {
   hideConfettiContainer();
 }, 8000);
 
-
 // ===============================
 //         Responsive Header
 // ===============================
-const mobileNav = document.querySelector(".mobile-navbar-btn");
-const navHeader = document.querySelector(".header");
-const navbarLinks = document.querySelectorAll(".navbar-link");
+const mobileNav = document.querySelector('.mobile-navbar-btn');
+const navHeader = document.querySelector('.header');
+const navbarLinks = document.querySelectorAll('.navbar-link');
 
 // Toggle mobile navigation menu
 function toggleNavbar() {
-  navHeader.classList.toggle("active");
+  navHeader.classList.toggle('active');
 }
 
 // Close the mobile navigation menu on link click
 function closeNavbar() {
-  navHeader.classList.remove("active");
+  navHeader.classList.remove('active');
 }
 
-mobileNav.addEventListener("click", toggleNavbar);
+mobileNav.addEventListener('click', toggleNavbar);
 
 navbarLinks.forEach((link) => {
-  link.addEventListener("click", closeNavbar);
+  link.addEventListener('click', closeNavbar);
 });
 
 // ===============================
@@ -218,7 +223,9 @@ function handleScroll() {
 
     if (scrollPosition >= offset && scrollPosition < offset + height) {
       const id = section.getAttribute('id');
-      const correspondingLink = document.querySelector(`.sticky header nav ul li a[href="#${id}"]`);
+      const correspondingLink = document.querySelector(
+        `.sticky header nav ul li a[href="#${id}"]`
+      );
       if (correspondingLink) {
         setActiveLink(correspondingLink);
       }
@@ -271,7 +278,9 @@ function updateDarkModePreference(enabled) {
 
 // Check device's color scheme and update dark mode accordingly
 function updateDeviceColorScheme() {
-  const isDarkModePreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDarkModePreferred = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches;
   if (isDarkModePreferred) {
     updateDarkModePreference(true);
   } else {
@@ -280,7 +289,9 @@ function updateDeviceColorScheme() {
 }
 
 window.addEventListener('DOMContentLoaded', updateDeviceColorScheme);
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateDeviceColorScheme);
+window
+  .matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', updateDeviceColorScheme);
 
 // ===============================
 //           Skills
@@ -289,7 +300,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', upd
 function animateSkills() {
   const skillBars = document.querySelectorAll('.skill-bar .skill-per');
 
-  skillBars.forEach(skillBar => {
+  skillBars.forEach((skillBar) => {
     const percentage = skillBar.getAttribute('percentage');
     skillBar.style.width = percentage + '%';
   });
@@ -298,7 +309,7 @@ function animateSkills() {
 // Function to reset skill bars to 0%
 function resetSkills() {
   const skillBars = document.querySelectorAll('.skill-bar .skill-per');
-  skillBars.forEach(skillBar => {
+  skillBars.forEach((skillBar) => {
     skillBar.style.width = '0%';
   });
 }
@@ -306,8 +317,8 @@ function resetSkills() {
 // Intersection Observer to trigger animation
 const skillsSection = document.querySelector('#skills');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
       animateSkills();
     } else {
@@ -339,16 +350,15 @@ document.onkeydown = (e) => {
     return false;
 };
 
-
 // ===============================
-//          Title Flash 
+//          Title Flash
 // ===============================
 function flashTitleNotification() {
   var originalTitle = document.title;
   var isFlash = false;
 
   function changeTitle() {
-    document.title = isFlash ? "Prince Portfolio" : originalTitle;
+    document.title = isFlash ? 'Prince Portfolio' : originalTitle;
     isFlash = !isFlash;
   }
 
@@ -357,6 +367,22 @@ function flashTitleNotification() {
 
 window.onload = flashTitleNotification;
 
+// ===============================
+//    disable text selection
+// ===============================
+function disableTextSelection() {
+  if (typeof document.onselectstart != 'undefined') {
+    document.onselectstart = function () {
+      return false;
+    };
+  } else if (typeof window.style != 'undefined') {
+    window.style.MozUserSelect = 'none';
+  } else {
+    document.onmousedown = function () {
+      return false;
+    };
+  }
+}
 
-
-
+// Call the function when the page loads
+window.onload = disableTextSelection;
