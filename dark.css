@@ -9,7 +9,7 @@
     }
     
   } */
-  /* .dark-mode-toggle {
+/* .dark-mode-toggle {
     display: inline-block;
     cursor: pointer;
     background-color: var(--dark-header-bg-color);
@@ -19,188 +19,209 @@
     border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
   } */
-  .dark-mode :root{
-    --paragraph-color: #ff0000;
-  }
-  .dark-mode body {
-    background-color: var(--dark-bg-color);
-    color: white;
-  }
-  
-  .dark-mode header {
-    background-color: #181818;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  .dark-mode .fa-brands{
-    color: white;
-  }
-  .dark-mode .navbar-link:visited, 
-  .dark-mode .navbar-link:link{
-    color: white;
-  }
-  .dark-mode .navbar-link.active1, 
-  .dark-mode .navbar-link:hover{
-    color: #137efb;
-  }
-  
-  .dark-mode .header .logo{
-    color: white;
-  }
+.dark-mode :root {
+  --paragraph-color: #ff0000;
+}
+.dark-mode body {
+  background-color: var(--dark-bg-color);
+  color: white;
+}
 
-  .dark-mode .section-hero{
-    background-color: #2A2A2A;
-  }
-  .dark-mode .hero-text p, 
-  .dark-mode .text-side p,
-  .dark-mode .projects-grid .pro__text p,
-  .dark-mode .contact__info a,
-  .dark-mode .contact__info p{
-    color: #8e8e8e;
-  }
-  .dark-mode .skill p{
+.dark-mode header {
+  background-color: #181818;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dark-mode .fa-brands {
+  color: white;
+}
+.dark-mode .navbar-link:visited,
+.dark-mode .navbar-link:link {
+  color: white;
+}
+.dark-mode .navbar-link.active1,
+.dark-mode .navbar-link:hover {
+  color: #137efb;
+}
+
+.dark-mode .header .logo {
+  color: white;
+}
+
+.dark-mode .section-hero {
+  background-color: #2a2a2a;
+}
+.dark-mode .hero-text p,
+.dark-mode .text-side p,
+.dark-mode .projects-grid .pro__text p,
+.dark-mode .contact__info a,
+.dark-mode .contact__info p {
+  color: #8e8e8e;
+}
+.dark-mode .skill p {
+  color: white;
+  border-right: 2px solid white;
+}
+@media (max-width: 962px) {
+  .dark-mode .skill p {
     color: white;
-    border-right: 2px solid white;
+    border-right: none;
+    border-bottom: 2px solid white;
   }
-  @media (max-width: 962px){
-    .dark-mode .skill p{
-        color: white;
-        border-right: none;
-        border-bottom: 2px solid white;
-      }
-  }
-  .dark-mode .skill ul li{
-    background-color: #1F1F1F;
-  } 
-  .dark-mode .about{
-    background-color: #1F1F1F;
-  }
-  .dark-mode .img-side span{
-    background-color: #1F1F1F;
-  }
-  .dark-mode .img-side span img{
-    filter: invert(100%) sepia(0%) saturate(10000%) hue-rotate(0deg) brightness(100%) contrast(100%);
-  }
-  .dark-mode .work-emoji{
-    background-blend-mode: multiply;
-  }
-  .dark-mode .projects-grid .pro{
-    background-color: #292929;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
-  }
-  .dark-mode .fa-solid{
-    color: white;
-    cursor: pointer;
-  }
-  .dark-mode .contact__icon-box span i{
-    color: #147efb;
-  }
-  .dark-mode .mobile-nav-icon{
-    filter: invert(100%) sepia(0%) saturate(10000%) hue-rotate(0deg) brightness(100%) contrast(100%);
-  }
-  .dark-mode .active .navbar{
-    background-color: #1F1F1F;
-  }
-  .dark-mode .links a{
-    color: white;
-  }
-  .dark-mode .hero-img{
-    
-    -webkit-animation: morph 8s ease-in-out infinite;
-    animation: morph 8s ease-in-out infinite;
-    background-image: url(assets/img/profile_dark.jpg);
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 3px solid black;
-    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
-    height: 20rem;
-    position: relative;
-    transition: all 1s ease-in-out;
-    width: 20rem;
-  }
-  /* .dark-mode #welcome-message p{
+}
+.dark-mode .skill ul li {
+  background-color: #1f1f1f;
+}
+.dark-mode .about {
+  background-color: #1f1f1f;
+}
+.dark-mode .img-side span {
+  background-color: #1f1f1f;
+}
+.dark-mode .img-side span img {
+  filter: invert(100%) sepia(0%) saturate(10000%) hue-rotate(0deg)
+    brightness(100%) contrast(100%);
+}
+.dark-mode .work-emoji {
+  background-blend-mode: multiply;
+}
+.dark-mode .projects-grid .pro {
+  background-color: #292929;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+}
+.dark-mode .fa-solid {
+  color: white;
+  cursor: pointer;
+}
+.dark-mode .contact__icon-box span i {
+  color: #147efb;
+}
+.dark-mode .mobile-nav-icon {
+  filter: invert(100%) sepia(0%) saturate(10000%) hue-rotate(0deg)
+    brightness(100%) contrast(100%);
+}
+.dark-mode .active .navbar {
+  background-color: #1f1f1f;
+}
+.dark-mode .links a {
+  color: white;
+}
+.dark-mode .hero-img {
+  -webkit-animation: morph 8s ease-in-out infinite;
+  animation: morph 8s ease-in-out infinite;
+  background-image: url(assets/img/profile_dark.jpg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 3px solid black;
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  height: 20rem;
+  position: relative;
+  transition: all 1s ease-in-out;
+  width: 20rem;
+}
+/* .dark-mode #welcome-message p{
     color: white;
   } */
-  .dark-mode .splash p{
-    color: #8e8e8e;
-  }
-  .dark-mode .welcome-container h1{
-    color: white;
-  }
-  .dark-mode .welcome-container .tab label h3{
-    color: white;
-  }
-  .dark-mode .welcome-container .tab {
-    background: #333;
-  }
-  .dark-mode .welcome-container .tab label::after{
-    color: white;
-  }
+.dark-mode .splash p {
+  color: #8e8e8e;
+}
+.dark-mode .welcome-container h1 {
+  color: white;
+}
+.dark-mode .welcome-container .tab label h3 {
+  color: white;
+}
+.dark-mode .welcome-container .tab {
+  background: #333;
+}
+.dark-mode .welcome-container .tab label::after {
+  color: white;
+}
 
-  .dark-mode .welcome-container .tab:nth-child(5) label h2{
-    background: linear-gradient(135deg,#1A73E8  ,#20B53E , #FFB74D);
-  }
-  .dark-mode .splash{
-    background-color: black;
-    color: white;
-    /* transition: background-color 0.3s ease, color 0.3s ease; */
-  }
-  .dark-mode .splash.display-none{
-    background-color: black;
-    color: white;
-    /* transition: background-color 0.3s ease, color 0.3s ease; */
-  }
-  .dark-mode .section-about{
-    background-color: #1F1F1F;
-  }
+.dark-mode .welcome-container .tab:nth-child(5) label h2 {
+  background: linear-gradient(135deg, #1a73e8, #20b53e, #ffb74d);
+}
+.dark-mode .splash {
+  background-color: black;
+  color: white;
+  /* transition: background-color 0.3s ease, color 0.3s ease; */
+}
+.dark-mode .splash.display-none {
+  background-color: black;
+  color: white;
+  /* transition: background-color 0.3s ease, color 0.3s ease; */
+}
+.dark-mode .section-about {
+  background-color: #1f1f1f;
+}
 
-  .dark-mode .section:nth-child(even) {
-    background-color: #2A2A2A !important;
-  }
-  .dark-mode .section:nth-child(odd) {
-    background-color: #1F1F1F !important;
-  }
+.dark-mode .section:nth-child(even) {
+  background-color: #2a2a2a !important;
+}
+.dark-mode .section:nth-child(odd) {
+  background-color: #1f1f1f !important;
+}
 
-  .dark-mode .hero-text h1, .dark-mode h3, .dark-mode h4{
-    color: white;
-  }
+.dark-mode .hero-text h1,
+.dark-mode h3,
+.dark-mode h4 {
+  color: white;
+}
 
-  .dark-mode .skill_bar_section .text-blk.skill-name{
-    color: white;
-  }
+.dark-mode .skill_bar_section .text-blk.skill-name {
+  color: white;
+}
 
-  .dark-mode .skill_bar_section .skill-per::after{
-    color: white;
-  }
+.dark-mode .skill_bar_section .skill-per::after {
+  color: white;
+}
 
-  .dark-mode .skill_bar_section .skill-bar{
-    background-color: #2A2A2A;
-  }
-  
-  .dark-mode .more-skill{
-    color: white;
-  }
+.dark-mode .skill_bar_section .skill-bar {
+  background-color: #2a2a2a;
+}
 
-  .dark-mode .skill-section{
-    background-color: #2A2A2A;
-  }
+.dark-mode .more-skill {
+  color: white;
+}
 
-  .dark-mode .circular_progress .card .circle-chart__percent{
-    fill: white;
-  }
-  .dark-mode .software-section{
-    background-color: #1F1F1F;
-  }
-  .dark-mode .circle-chart__background{
-    stroke: #1F1F1F;
-  }
-  .dark-mode .circular_progress .text-blk.card-head{
-    color: white;
-  }
-  .dark-mode .text-side h3{
-color: #147efb;
-  }
+.dark-mode .skill-section {
+  background-color: #2a2a2a;
+}
 
-  .dark-mode .project-content h4{
-    background-color: #1f1f1f;
-  }
+.dark-mode .circular_progress .card .circle-chart__percent {
+  fill: white;
+}
+.dark-mode .software-section {
+  background-color: #1f1f1f;
+}
+.dark-mode .circle-chart__background {
+  stroke: #1f1f1f;
+}
+.dark-mode .circular_progress .text-blk.card-head {
+  color: white;
+}
+.dark-mode .text-side h3 {
+  color: #147efb;
+}
+
+.dark-mode .project-content h4 {
+  background-color: #1f1f1f;
+}
+
+.dark-mode .splash h1 {
+  color: #4a90e2;
+}
+
+.dark-mode .splash p {
+  color: #edededa8;
+}
+
+.dark-mdoe .splash.display-none {
+  background-color: #111111;
+  color: #ededed;
+}
+
+.dark-mode .splash {
+  background-color: #111111;
+  color: #ededed;
+}

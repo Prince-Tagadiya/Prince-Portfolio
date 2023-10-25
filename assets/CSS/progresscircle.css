@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /**
  * Inspiration for this project found at:
  * https://markus.oberlehner.net/blog/pure-css-animated-svg-circle-chart
@@ -23,7 +30,11 @@
   stroke-linecap: round;
   fill: none;
   animation: circle-chart-fill 2s reverse;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
   transform-origin: center;
 }
 
@@ -38,18 +49,23 @@
  */
 
 .circle-chart__circle--negative {
-  transform: rotate(-90deg) scale(1,-1); /* 1, 2, 3 */
+  -webkit-transform: rotate(-90deg) scale(1, -1);
+  -ms-transform: rotate(-90deg) scale(1, -1);
+  transform: rotate(-90deg) scale(1, -1); /* 1, 2, 3 */
 }
 
 .circle-chart__background {
   stroke: #fff;
   stroke-width: 2;
-  fill: none; 
+  fill: none;
 }
 
 .circle-chart__info {
+  -webkit-animation: circle-chart-appear 2s forwards;
   animation: circle-chart-appear 2s forwards;
   opacity: 0;
+  -webkit-transform: translateY(0.3em);
+  -ms-transform: translateY(0.3em);
   transform: translateY(0.3em);
 }
 
@@ -60,9 +76,9 @@
 }
 
 .circle-chart__subline {
-    alignment-baseline: central;
-    text-anchor: middle;
-    font-size: 3px;
+  alignment-baseline: central;
+  text-anchor: middle;
+  font-size: 3px;
 }
 
 /* .success-stroke {
@@ -77,13 +93,30 @@
   stroke: #ff4444;
 } */
 
+@-webkit-keyframes circle-chart-fill {
+  to {
+    stroke-dasharray: 0 100;
+  }
+}
+
 @keyframes circle-chart-fill {
-  to { stroke-dasharray: 0 100; }
+  to {
+    stroke-dasharray: 0 100;
+  }
+}
+
+@-webkit-keyframes circle-chart-appear {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
 
 @keyframes circle-chart-appear {
   to {
     opacity: 1;
+    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }

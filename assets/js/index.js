@@ -332,40 +332,7 @@ observer.observe(skillsSection);
 // ===============================
 //    Disable Right Click
 // ===============================
-// document.addEventListener('contextmenu', (e) => e.preventDefault());
 
-// function ctrlShiftKey(e, keyCode) {
-//   return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
-// }
-
-// document.onkeydown = (e) => {
-//   // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
-//   if (
-//     event.keyCode === 123 ||
-//     ctrlShiftKey(e, 'I') ||
-//     ctrlShiftKey(e, 'J') ||
-//     ctrlShiftKey(e, 'C') ||
-//     (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
-//   )
-//     return false;
-// };
-
-// // Adding `keydown` event listener on the document
-// document.addEventListener('keydown', (event) => {
-//   console.log(`User pressed: ${event.key}`);
-//   event.preventDefault();
-//   return false;
-// });
-
-// const inputField = document.getElementById('message');
-
-// // or adding `keydown` on the `input` element
-// inputField.addEventListener('keydown', (event) => {
-//   console.log(`User pressed: ${event.key}`);
-//   console.log('hi');
-//   event.preventDefault();
-//   return false;
-// });
 document.addEventListener('contextmenu', (e) => {
   if (e.target.id === 'princeName') {
     // Allow the context menu (inspect option) for the "Prince Tagadiya" text
