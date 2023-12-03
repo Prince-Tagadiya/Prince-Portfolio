@@ -280,6 +280,9 @@
   .projects-grid .pro__video {
     width: 100%;
   }
+  .projects-grid .pro__img {
+    width: auto;
+  }
 }
 @media (max-width: 400px) {
   .projects-grid .pro__1 {
@@ -340,8 +343,12 @@
     -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
+    z-index: 3000;
   }
   #progress {
-    bottom: 120px !important;
+    z-index: 1;
+  }
+  .skill_bar_section .right-side {
+    margin-top: 0 !important;
   }
 }

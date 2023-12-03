@@ -333,47 +333,47 @@ observer.observe(skillsSection);
 //    Disable Right Click
 // ===============================
 
-document.addEventListener('contextmenu', (e) => {
-  if (e.target.id === 'princeName') {
-    // Allow the context menu (inspect option) for the "Prince Tagadiya" text
-    return true;
-  }
-  e.preventDefault(); // Prevent context menu for other elements
-});
+// document.addEventListener('contextmenu', (e) => {
+//   if (e.target.id === 'princeName') {
+//     // Allow the context menu (inspect option) for the "Prince Tagadiya" text
+//     return true;
+//   }
+//   e.preventDefault(); // Prevent context menu for other elements
+// });
 
-function ctrlShiftKey(e, keyCode) {
-  return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
-}
+// function ctrlShiftKey(e, keyCode) {
+//   return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+// }
 
-document.onkeydown = (e) => {
-  // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
-  if (
-    event.keyCode === 123 ||
-    ctrlShiftKey(e, 'I') ||
-    ctrlShiftKey(e, 'J') ||
-    ctrlShiftKey(e, 'C') ||
-    (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
-  ) {
-    return false;
-  }
-};
+// document.onkeydown = (e) => {
+//   // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
+//   if (
+//     event.keyCode === 123 ||
+//     ctrlShiftKey(e, 'I') ||
+//     ctrlShiftKey(e, 'J') ||
+//     ctrlShiftKey(e, 'C') ||
+//     (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+//   ) {
+//     return false;
+//   }
+// };
 
-// Adding `keydown` event listener on the document
-document.addEventListener('keydown', (event) => {
-  console.log(`User pressed: ${event.key}`);
-  event.preventDefault();
-  return false;
-});
+// // Adding `keydown` event listener on the document
+// document.addEventListener('keydown', (event) => {
+//   console.log(`User pressed: ${event.key}`);
+//   event.preventDefault();
+//   return false;
+// });
 
-const inputField = document.getElementById('message');
+// const inputField = document.getElementById('message');
 
-// or adding `keydown` on the `input` element
-inputField.addEventListener('keydown', (event) => {
-  console.log(`User pressed: ${event.key}`);
-  console.log('hi');
-  event.preventDefault();
-  return false;
-});
+// // or adding `keydown` on the `input` element
+// inputField.addEventListener('keydown', (event) => {
+//   console.log(`User pressed: ${event.key}`);
+//   console.log('hi');
+//   event.preventDefault();
+//   return false;
+// });
 // ===============================
 //          Title Flash
 // ===============================
@@ -391,22 +391,113 @@ function flashTitleNotification() {
 
 window.onload = flashTitleNotification;
 
-// ===============================
-//    disable text selection
-// ===============================
-function disableTextSelection() {
-  if (typeof document.onselectstart != 'undefined') {
-    document.onselectstart = function () {
-      return false;
-    };
-  } else if (typeof window.style != 'undefined') {
-    window.style.MozUserSelect = 'none';
-  } else {
-    document.onmousedown = function () {
-      return false;
-    };
-  }
-}
+// filter
+const tabsBox = document.querySelector('.tabs-box'),
+  allTabs = tabsBox.querySelectorAll('.tab'),
+  arrowIcons = document.querySelectorAll('.icon i');
 
-// Call the function when the page loads
-window.onload = disableTextSelection;
+let isDragging = false;
+let startX = 0;
+
+const handleIcons = (scrollVal) => {
+  let maxScrollableWidth = tabsBox.scrollWidth - tabsBox.clientWidth;
+  arrowIcons[0].parentElement.style.display = scrollVal <= 0 ? 'none' : 'flex';
+  arrowIcons[1].parentElement.style.display =
+    maxScrollableWidth - scrollVal <= 1 ? 'none' : 'flex';
+};
+
+arrowIcons.forEach((icon) => {
+  icon.addEventListener('click', () => {
+    // if clicked icon is left, reduce 350 from tabsBox scrollLeft else add
+    let scrollWidth = (tabsBox.scrollLeft += icon.id === 'left' ? -340 : 340);
+    handleIcons(scrollWidth);
+  });
+});
+
+allTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    tabsBox.querySelector('.active').classList.remove('active');
+    tab.classList.add('active');
+  });
+});
+
+const startDragging = (e) => {
+  isDragging = true;
+  startX = e.touches ? e.touches[0].clientX : e.clientX;
+};
+
+const dragging = (e) => {
+  if (!isDragging) return;
+  tabsBox.classList.add('dragging');
+  const currentX = e.touches ? e.touches[0].clientX : e.clientX;
+  tabsBox.scrollLeft -= currentX - startX;
+  startX = currentX;
+  handleIcons(tabsBox.scrollLeft);
+};
+
+const dragStop = () => {
+  isDragging = false;
+  tabsBox.classList.remove('dragging');
+};
+
+tabsBox.addEventListener('mousedown', startDragging);
+tabsBox.addEventListener('touchstart', startDragging);
+tabsBox.addEventListener('mousemove', dragging);
+tabsBox.addEventListener('touchmove', dragging);
+document.addEventListener('mouseup', dragStop);
+document.addEventListener('touchend', dragStop);
+
+const projectFilterBtns = document.querySelectorAll('.filter-btn');
+const projectItems = document.querySelectorAll('.projects-grid li');
+
+projectFilterBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const category = btn.getAttribute('data-category');
+
+    // Remove 'active' class from all buttons
+    projectFilterBtns.forEach((otherBtn) => {
+      otherBtn.classList.remove('active');
+    });
+
+    // Add 'active' class to the clicked button
+    btn.classList.add('active');
+
+    // Filter projects based on the selected category
+    projectItems.forEach((item) => {
+      const categories = item.getAttribute('data-categories').split(' ');
+      if (category === 'all' || categories.includes(category)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Add click event listeners to filter items
+document.addEventListener('DOMContentLoaded', function () {
+  const filterItems = document.querySelectorAll('.tabs-box li');
+  const projects = document.querySelectorAll('.projects-grid li');
+
+  filterItems.forEach((item) => {
+    item.addEventListener('click', function () {
+      const category = this.getAttribute('data-category');
+
+      filterItems.forEach((item) => {
+        item.classList.remove('active');
+      });
+
+      this.classList.add('active');
+
+      projects.forEach((project) => {
+        const projectCategory = project.getAttribute('data-category');
+
+        if (category === 'all' || projectCategory === category) {
+          project.style.display = 'inline-block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+    });
+  });
+});
