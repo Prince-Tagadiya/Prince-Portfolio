@@ -172,13 +172,6 @@
   background-color: #1f1f1f;
 }
 
-.dark-mode .section:nth-child(even) {
-  background-color: #2a2a2a !important;
-}
-.dark-mode .section:nth-child(odd) {
-  background-color: #1f1f1f !important;
-}
-
 .dark-mode .hero-text h1,
 .dark-mode h3,
 .dark-mode h4 {
@@ -275,6 +268,25 @@
   background: #2a2a2a;
 }
 
-.dark-mode .navbar {
-  background-color: #1f1f1f;
+.dark-mode .section-hero {
+  background-color: #2a2a2a !important;
 }
+.dark-mode .section-about {
+  background-color: #1f1f1f !important;
+}
+.dark-mode .section-skills {
+  background-color: #2a2a2a !important;
+}
+.dark-mode .section-project {
+  background-color: #1f1f1f !important;
+}
+.dark-mode .section-contact {
+  background-color: #2a2a2a !important;
+}
+
+/* .dark-mode .section:nth-child(even) {
+  background-color: #2a2a2a !important;
+}
+.dark-mode .section:nth-child(odd) {
+  background-color: #1f1f1f !important;
+} */

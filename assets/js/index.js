@@ -501,3 +501,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+function openPopup() {
+  document.getElementById('popup').style.display = 'flex';
+  document.documentElement.style.overflow = 'hidden';
+}
+
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+  document.documentElement.style.overflow = 'auto';
+}

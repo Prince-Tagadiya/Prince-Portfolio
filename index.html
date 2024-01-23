@@ -265,7 +265,7 @@
                       </div>
                     </div>
                   </div> -->
-                <a href="skills.html" class="more-skill" target="_blank">3+More</a>
+                  <a class="more-skill" target="_blank" onclick="openPopup()">3+More</a>
                   </div>
                 </div>
               </div>
@@ -275,6 +275,16 @@
     </div>
 </section>
 
+<!-- <button onclick="openPopup()">Open Popup</button> -->
+
+  <!-- Include your modal HTML content here -->
+  <div id="popup" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <!-- Include the content of your second HTML page here -->
+      <iframe src="skills.html"></iframe>
+    </div>
+  </div>
 <!-- ===============================
             Projects Section 
 =============================== --> 

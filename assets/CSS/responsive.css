@@ -88,6 +88,10 @@
   .active .mobile-navbar-btn .mobile-nav-icon[name='Nav_icon'] {
     display: none;
   }
+
+  .dark-mode .navbar {
+    background-color: #181818;
+  }
 }
 /* ===============================
             Hero Section
